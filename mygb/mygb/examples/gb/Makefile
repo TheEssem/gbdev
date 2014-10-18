@@ -1,18 +1,18 @@
 CC	= ../../bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG
 
-BINS	= mypaint.gb \
-	galaxy.gb \
-	space.gb \
-	paint.gb \
-	rpn.gb \
-	rand.gb \
-	comm.gb \
-	irq.gb \
-	filltest.gb \
-	ram_fn.gb \
-	fonts.gb \
-	samptest.gb \
-	banks.gb
+BINS	= mypaint.gb 
+	#galaxy.gb \
+	#space.gb \
+	#paint.gb \
+	#rpn.gb \
+	#rand.gb \
+	#comm.gb \
+	#irq.gb \
+	#filltest.gb \
+	#ram_fn.gb \
+	#fonts.gb \
+	#samptest.gb \
+	#banks.gb
 
 # sound.gb: Cant do bitfields
 OTHER = sound.gb \

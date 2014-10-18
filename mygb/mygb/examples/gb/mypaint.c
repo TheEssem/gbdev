@@ -1,5 +1,8 @@
+#include <stdio.h>
 #include <gb/gb.h>
 #include <gb/drawing.h>
+#include <gb/font.h>
+#include <gb/console.h>
 
 #define NB_TOOLS 18
 #define NB_DATA_TILES 48
@@ -508,11 +511,72 @@ void run()
   }
 }
 
+void delayFrames(UBYTE numframes)
+{
+	UBYTE i;
+	
+	for(i=0; i < numframes; i++)
+	{
+		wait_vbl_done();
+	}
+}
+
+void fontTest()
+{
+	font_t ibm_font, italic_font, min_font;
+	UBYTE i;
+	UBYTE delayTime;
+
+	/* First, init the font system */
+    font_init();
+
+
+
+	/* Load all the fonts that we can */
+    ibm_font = font_load(font_ibm);  /* 96 tiles */
+    italic_font = font_load(font_italic);   /* 93 tiles */
+    
+	
+	color(BLACK, DKGREY, SOLID);
+	
+	delayTime = 60;
+
+	font_set(ibm_font);
+
+	color(BLACK, DKGREY, SOLID);
+
+	printf("Now, this is a\n");
+	delayFrames(delayTime);
+	printf("story all about how\n");
+	delayFrames(delayTime);
+	printf("My life got flipped,");
+	delayFrames(delayTime);
+	printf("turned upside down.\n");
+	delayFrames(delayTime);
+	printf("And I'd like to\n");
+	delayFrames(delayTime);
+	printf("take a minute\n");
+	delayFrames(delayTime);
+	printf("Just sit right there");
+	delayFrames(delayTime);
+	printf("I'll tell you how I\n");
+	delayFrames(delayTime);
+	printf("became the prince of");
+	delayFrames(delayTime);
+	printf("a town called\n");
+	delayFrames(delayTime);
+	printf("Bel Air\n");
+
+
+}
+
 void main()
 {
   /* Initialize sprite palette */
   OBP1_REG = 0xE0U;
 
+  fontTest();
+  /*
   splash();
 
   current_tool = 0;
@@ -523,5 +587,5 @@ void main()
   cursor_x = 160/2;
   cursor_y = 144/2;
 
-  run();
+  run();*/
 }
