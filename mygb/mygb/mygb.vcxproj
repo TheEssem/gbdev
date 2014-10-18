@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{12CCC666-1803-43D6-9A97-7AB677ACCD5D}</ProjectGuid>
+    <RootNamespace>mygb</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\repo\gb\mygb\mygb\include;$(IncludePath)</IncludePath>
+    <SourcePath>C:\repo\gb\mygb\mygb\include;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="examples\gb\banks.c" />
+    <ClCompile Include="examples\gb\bank_0.c" />
+    <ClCompile Include="examples\gb\bank_1.c" />
+    <ClCompile Include="examples\gb\bank_2.c" />
+    <ClCompile Include="examples\gb\bank_3.c" />
+    <ClCompile Include="examples\gb\comm.c" />
+    <ClCompile Include="examples\gb\filltest.c" />
+    <ClCompile Include="examples\gb\fonts.c" />
+    <ClCompile Include="examples\gb\fprpn.c" />
+    <ClCompile Include="examples\gb\irq.c" />
+    <ClCompile Include="examples\gb\paint.c" />
+    <ClCompile Include="examples\gb\ram_fn.c" />
+    <ClCompile Include="examples\gb\rand.c" />
+    <ClCompile Include="examples\gb\rpn.c" />
+    <ClCompile Include="examples\gb\samptest.c" />
+    <ClCompile Include="examples\gb\sound.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="examples\gb\gb\cgb.h" />
+    <ClInclude Include="examples\gb\gb\console.h" />
+    <ClInclude Include="examples\gb\gb\ctype.h" />
+    <ClInclude Include="examples\gb\gb\drawing.h" />
+    <ClInclude Include="examples\gb\gb\font.h" />
+    <ClInclude Include="examples\gb\gb\gb.h" />
+    <ClInclude Include="examples\gb\gb\gbdk-lib.h" />
+    <ClInclude Include="examples\gb\gb\hardware.h" />
+    <ClInclude Include="examples\gb\gb\malloc.h" />
+    <ClInclude Include="examples\gb\gb\rand.h" />
+    <ClInclude Include="examples\gb\gb\sample.h" />
+    <ClInclude Include="examples\gb\gb\sgb.h" />
+    <ClInclude Include="examples\gb\gb\stdarg.h" />
+    <ClInclude Include="examples\gb\gb\stdio.h" />
+    <ClInclude Include="examples\gb\gb\stdlib.h" />
+    <ClInclude Include="examples\gb\gb\string.h" />
+    <ClInclude Include="examples\gb\gb\time.h" />
+    <ClInclude Include="examples\gb\gb\types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="examples\gb\make.bat" />
+    <None Include="examples\gb\run.bat" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
