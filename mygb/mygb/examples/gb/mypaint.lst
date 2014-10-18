@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Sat Oct 18 13:20:09 2014
+                              3 ; Version 2.2.1 Sat Oct 18 13:22:07 2014
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc93880
+                              6 	.module lcc106920
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -216,7 +216,7 @@
                             216 ; code
                             217 ;--------------------------------------------------------
                             218 	.area _CODE
-                            219 ;	paint.c 261
+                            219 ;	mypaint.c 261
                             220 ; genLabel
                             221 ; genFunction
                             222 ;	---------------------------------
@@ -226,12 +226,12 @@
    0000                     226 _set_cursor:
    0000 C5                  227 	push	bc
    0001 E8 F1               228 	lda sp,-15(sp)
-                            229 ;	paint.c 265
+                            229 ;	mypaint.c 265
                             230 ; genAssign
                             231 ; AOP_STK for _set_cursor_i_1_1
    0003 F8 0C               232 	lda	hl,12(sp)
    0005 36 00               233 	ld	(hl),#0x00 ; 3
-                            234 ;	paint.c 266
+                            234 ;	mypaint.c 266
                             235 ; genAssign
                             236 ; AOP_STK for _set_cursor_x_1_1
    0007 23                  237 	inc	hl
@@ -281,7 +281,7 @@
    0031 7E                  281 	ld	a,(hl)
    0032 99                  282 	sbc	a,c ; 2
    0033 D2 D6 00            283 	jp	nc,00109$
-                            284 ;	paint.c 267
+                            284 ;	mypaint.c 267
                             285 ; genAssign
                             286 ; AOP_STK for _set_cursor_y_1_1
    0036 2B                  287 	dec	hl
@@ -331,7 +331,7 @@
    005E AF                  331 	xor	a,a
    005F B6                  332 	or	a,(hl)
    0060 CA D0 00            333 	jp	z,00107$
-                            334 ;	paint.c 270
+                            334 ;	mypaint.c 270
                             335 ; genPointerGet
                             336 ; AOP_STK for _set_cursor_sloc0_1_0
    0063 F8 0A               337 	lda	hl,10(sp)
@@ -379,7 +379,7 @@
    008E 7E                  379 	ld	a,(hl)
    008F F8 01               380 	lda	hl,1(sp)
    0091 77                  381 	ld	(hl),a ; 3
-                            382 ;	paint.c 268
+                            382 ;	mypaint.c 268
                             383 ; genIpush
                             384 ; AOP_STK for _set_cursor_sloc7_1_0
    0092 2B                  385 	dec	hl
@@ -400,7 +400,7 @@
                             400 ; genCall
    00A0 CD 00 00            401 	call	_set_sprite_data
    00A3 E8 04               402 	lda	sp,4(sp)
-                            403 ;	paint.c 271
+                            403 ;	mypaint.c 271
                             404 ; genIpush
                             405 ; AOP_STK for _set_cursor_i_1_1
    00A5 F8 0C               406 	lda	hl,12(sp)
@@ -415,7 +415,7 @@
                             415 ; genCall
    00AD CD 00 00            416 	call	_set_sprite_tile
    00B0 E8 02               417 	lda	sp,2(sp)
-                            418 ;	paint.c 272
+                            418 ;	mypaint.c 272
                             419 ; genIpush
    00B2 3E 10               420 	ld	a,#0x10
    00B4 F5                  421 	push	af
@@ -429,7 +429,7 @@
                             429 ; genCall
    00BB CD 00 00            430 	call	_set_sprite_prop
    00BE E8 02               431 	lda	sp,2(sp)
-                            432 ;	paint.c 273
+                            432 ;	mypaint.c 273
                             433 ; genPlus
                             434 ; AOP_STK for _set_cursor_i_1_1
                             435 ; genPlusIncr
@@ -440,7 +440,7 @@
                             440 ; genAssign
                             441 ; AOP_STK for _set_cursor_i_1_1
    00C6 71                  442 	ld	(hl),c ; 3
-                            443 ;	paint.c 267
+                            443 ;	mypaint.c 267
                             444 ; genPlus
                             445 ; AOP_STK for _set_cursor_y_1_1
                             446 ; genPlusIncr
@@ -455,7 +455,7 @@
    00CD C3 49 00            455 	jp	00101$
                             456 ; genLabel
    00D0                     457 00107$:
-                            458 ;	paint.c 266
+                            458 ;	mypaint.c 266
                             459 ; genPlus
                             460 ; AOP_STK for _set_cursor_x_1_1
                             461 ; genPlusIncr
@@ -465,14 +465,14 @@
    00D3 C3 0B 00            465 	jp	00105$
                             466 ; genLabel
    00D6                     467 00109$:
-                            468 ;	paint.c 276
+                            468 ;	mypaint.c 276
                             469 ; genCmpLt
                             470 ; AOP_STK for _set_cursor_i_1_1
    00D6 F8 0C               471 	lda	hl,12(sp)
    00D8 7E                  472 	ld	a,(hl)
    00D9 FE 04               473 	cp	#0x04
    00DB D2 F4 00            474 	jp	nc,00113$
-                            475 ;	paint.c 277
+                            475 ;	mypaint.c 277
                             476 ; genIpush
    00DE 3E 00               477 	ld	a,#0x00
    00E0 F5                  478 	push	af
@@ -489,7 +489,7 @@
                             489 ; genCall
    00E9 CD 00 00            490 	call	_move_sprite
    00EC E8 03               491 	lda	sp,3(sp)
-                            492 ;	paint.c 276
+                            492 ;	mypaint.c 276
                             493 ; genPlus
                             494 ; AOP_STK for _set_cursor_i_1_1
                             495 ; genPlusIncr
@@ -504,7 +504,7 @@
    00F6 C1                  504 	pop bc
    00F7 C9                  505 	ret
    00F8                     506 ___set_cursor_end:
-                            507 ;	paint.c 281
+                            507 ;	mypaint.c 281
                             508 ; genLabel
                             509 ; genFunction
                             510 ;	---------------------------------
@@ -514,7 +514,7 @@
    00F8                     514 _move_cursor:
    00F8 C5                  515 	push	bc
    00F9 E8 EA               516 	lda sp,-22(sp)
-                            517 ;	paint.c 285
+                            517 ;	mypaint.c 285
                             518 ; genAssign
                             519 ; AOP_STK for _move_cursor_x_1_1
    00FB F8 15               520 	lda	hl,21(sp)
@@ -564,7 +564,7 @@
    0125 7E                  564 	ld	a,(hl)
    0126 99                  565 	sbc	a,c ; 2
    0127 D2 09 02            566 	jp	nc,00109$
-                            567 ;	paint.c 286
+                            567 ;	mypaint.c 286
                             568 ; genAssign
                             569 ; AOP_STK for _move_cursor_y_1_1
    012A 2B                  570 	dec	hl
@@ -666,7 +666,7 @@
    0187 AF                  666 	xor	a,a
    0188 B6                  667 	or	a,(hl)
    0189 CA 03 02            668 	jp	z,00107$
-                            669 ;	paint.c 289
+                            669 ;	mypaint.c 289
                             670 ; genPlus
                             671 ; AOP_HL for _cursor_y
                             672 ; AOP_STK for _move_cursor_sloc6_1_0
@@ -718,7 +718,7 @@
    01BA 23                  718 	inc	hl
    01BB 23                  719 	inc	hl
    01BC 77                  720 	ld	(hl),a ; 3
-                            721 ;	paint.c 288
+                            721 ;	mypaint.c 288
                             722 ; genPlus
                             723 ; AOP_HL for _cursor_x
                             724 ; AOP_STK for _move_cursor_sloc11_1_0
@@ -756,7 +756,7 @@
    01D9 86                  756 	add	a,(hl)
    01DA F8 01               757 	lda	hl,1(sp)
    01DC 77                  758 	ld	(hl),a ; 3
-                            759 ;	paint.c 287
+                            759 ;	mypaint.c 287
                             760 ; genPlus
                             761 ; AOP_STK for _move_cursor_sloc3_1_0
                             762 ; AOP_STK for _move_cursor_y_1_1
@@ -788,7 +788,7 @@
                             788 ; genCall
    01F4 CD 00 00            789 	call	_move_sprite
    01F7 E8 03               790 	lda	sp,3(sp)
-                            791 ;	paint.c 286
+                            791 ;	mypaint.c 286
                             792 ; genPlus
                             793 ; AOP_STK for _move_cursor_y_1_1
                             794 ; genPlusIncr
@@ -803,7 +803,7 @@
    0200 C3 71 01            803 	jp	00101$
                             804 ; genLabel
    0203                     805 00107$:
-                            806 ;	paint.c 285
+                            806 ;	mypaint.c 285
                             807 ; genPlus
                             808 ; AOP_STK for _move_cursor_x_1_1
                             809 ; genPlusIncr
@@ -818,7 +818,7 @@
    020B C1                  818 	pop bc
    020C C9                  819 	ret
    020D                     820 ___move_cursor_end:
-                            821 ;	paint.c 292
+                            821 ;	mypaint.c 292
                             822 ; genLabel
                             823 ; genFunction
                             824 ;	---------------------------------
@@ -828,7 +828,7 @@
    020D                     828 _move_menu_cursor:
    020D C5                  829 	push	bc
    020E E8 FE               830 	lda sp,-2(sp)
-                            831 ;	paint.c 296
+                            831 ;	mypaint.c 296
                             832 ; genIpush
    0210 3E 0A               833 	ld	a,#0x0A
    0212 F5                  834 	push	af
@@ -893,7 +893,7 @@
    024B 79                  893 	ld	a,c
    024C C6 0C               894 	add	a,#0x0C
    024E 4F                  895 	ld	c,a
-                            896 ;	paint.c 295
+                            896 ;	mypaint.c 295
                             897 ; genPlus
                             898 ; AOP_STK for _move_menu_cursor_sloc0_1_0
                             899 ; genPlusIncr
@@ -934,7 +934,7 @@
    026E 04                  934 	inc	b
    026F 04                  935 	inc	b
    0270 04                  936 	inc	b
-                            937 ;	paint.c 294
+                            937 ;	mypaint.c 294
                             938 ; genIpush
    0271 79                  939 	ld	a,c
    0272 F5                  940 	push	af
@@ -957,7 +957,7 @@
    0282 C1                  957 	pop bc
    0283 C9                  958 	ret
    0284                     959 ___move_menu_cursor_end:
-                            960 ;	paint.c 299
+                            960 ;	mypaint.c 299
                             961 ; genLabel
                             962 ; genFunction
                             963 ;	---------------------------------
@@ -967,7 +967,7 @@
    0284                     967 _set_icon:
    0284 C5                  968 	push	bc
    0285 E8 D6               969 	lda sp,-42(sp)
-                            970 ;	paint.c 303
+                            970 ;	mypaint.c 303
                             971 ; genAssign
                             972 ; AOP_STK for _set_icon_x_1_1
    0287 F8 29               973 	lda	hl,41(sp)
@@ -1029,7 +1029,7 @@
    02BE 7E                 1029 	ld	a,(hl)
    02BF 99                 1030 	sbc	a,c ; 2
    02C0 D2 1B 04           1031 	jp	nc,00109$
-                           1032 ;	paint.c 304
+                           1032 ;	mypaint.c 304
                            1033 ; genAssign
                            1034 ; AOP_STK for _set_icon_y_1_1
    02C3 2B                 1035 	dec	hl
@@ -1109,7 +1109,7 @@
    030A AF                 1109 	xor	a,a
    030B B6                 1110 	or	a,(hl)
    030C CA 15 04           1111 	jp	z,00107$
-                           1112 ;	paint.c 305
+                           1112 ;	mypaint.c 305
                            1113 ; genPointerGet
                            1114 ; AOP_STK for _set_icon_sloc1_1_0
                            1115 ; AOP_STK for _set_icon_sloc6_1_0
@@ -1199,7 +1199,7 @@
                            1199 ; genAssign
                            1200 ; AOP_STK for _set_icon_index_2_2
                            1201 ; (registers are the same)
-                           1202 ;	paint.c 309
+                           1202 ;	mypaint.c 309
                            1203 ; genLeftShift
                            1204 ; AOP_STK for _set_icon_index_2_2
                            1205 ; AOP_STK for _set_icon_sloc13_1_0
@@ -1246,7 +1246,7 @@
    0393 2A                 1246 	ld	a,(hl+)
    0394 23                 1247 	inc	hl
    0395 77                 1248 	ld	(hl),a ; 3
-                           1249 ;	paint.c 308
+                           1249 ;	mypaint.c 308
                            1250 ; genIfx
                            1251 ; AOP_STK for 
    0396 AF                 1252 	xor	a,a
@@ -1317,7 +1317,7 @@
    03D8 7E                 1317 	ld	a,(hl)
    03D9 F8 02              1318 	lda	hl,2(sp)
    03DB 77                 1319 	ld	(hl),a ; 3
-                           1320 ;	paint.c 307
+                           1320 ;	mypaint.c 307
                            1321 ; genPointerGet
                            1322 ; AOP_STK for _set_icon_sloc2_1_0
    03DC F8 20              1323 	lda	hl,32(sp)
@@ -1330,7 +1330,7 @@
    03E2 F8 28              1330 	lda	hl,40(sp)
    03E4 86                 1331 	add	a,(hl)
    03E5 4F                 1332 	ld	c,a
-                           1333 ;	paint.c 306
+                           1333 ;	mypaint.c 306
                            1334 ; genPointerGet
                            1335 ; AOP_STK for _set_icon_sloc3_1_0
    03E6 F8 1E              1336 	lda	hl,30(sp)
@@ -1372,7 +1372,7 @@
                            1372 ; genCall
    0406 CD 00 00           1373 	call	_switch_data
    0409 E8 06              1374 	lda	sp,6(sp)
-                           1375 ;	paint.c 304
+                           1375 ;	mypaint.c 304
                            1376 ; genPlus
                            1377 ; AOP_STK for _set_icon_y_1_1
                            1378 ; genPlusIncr
@@ -1387,7 +1387,7 @@
    0412 C3 F5 02           1387 	jp	00101$
                            1388 ; genLabel
    0415                    1389 00107$:
-                           1390 ;	paint.c 303
+                           1390 ;	mypaint.c 303
                            1391 ; genPlus
                            1392 ; AOP_STK for _set_icon_x_1_1
                            1393 ; genPlusIncr
@@ -1402,7 +1402,7 @@
    041D C1                 1402 	pop bc
    041E C9                 1403 	ret
    041F                    1404 ___set_icon_end:
-                           1405 ;	paint.c 313
+                           1405 ;	mypaint.c 313
                            1406 ; genLabel
                            1407 ; genFunction
                            1408 ;	---------------------------------
@@ -1412,7 +1412,7 @@
    041F                    1412 _change_icon:
    041F C5                 1413 	push	bc
    0420 E8 CB              1414 	lda sp,-53(sp)
-                           1415 ;	paint.c 317
+                           1415 ;	mypaint.c 317
                            1416 ; genAssign
                            1417 ; AOP_STK for _change_icon_x_1_1
    0422 F8 34              1418 	lda	hl,52(sp)
@@ -1475,7 +1475,7 @@
    0459 7E                 1475 	ld	a,(hl)
    045A 99                 1476 	sbc	a,c ; 2
    045B D2 09 06           1477 	jp	nc,00109$
-                           1478 ;	paint.c 318
+                           1478 ;	mypaint.c 318
                            1479 ; genAssign
                            1480 ; AOP_STK for _change_icon_y_1_1
    045E 2B                 1481 	dec	hl
@@ -1555,7 +1555,7 @@
    04A5 AF                 1555 	xor	a,a
    04A6 B6                 1556 	or	a,(hl)
    04A7 CA 03 06           1557 	jp	z,00107$
-                           1558 ;	paint.c 321
+                           1558 ;	mypaint.c 321
                            1559 ; genIfx
                            1560 ; AOP_STK for 
    04AA AF                 1561 	xor	a,a
@@ -1563,7 +1563,7 @@
    04AD B6                 1563 	or	a,(hl)
    04AE B7                 1564 	or	a,a
    04AF CA 3B 05           1565 	jp	z,00111$
-                           1566 ;	paint.c 322
+                           1566 ;	mypaint.c 322
                            1567 ; genPointerGet
                            1568 ; AOP_STK for _change_icon_sloc1_1_0
                            1569 ; AOP_STK for _change_icon_sloc6_1_0
@@ -1703,7 +1703,7 @@
    0538 C3 C0 05           1703 	jp	00112$
                            1704 ; genLabel
    053B                    1705 00111$:
-                           1706 ;	paint.c 323
+                           1706 ;	mypaint.c 323
                            1707 ; genPointerGet
                            1708 ; AOP_STK for _change_icon_sloc1_1_0
                            1709 ; AOP_STK for _change_icon_sloc17_1_0
@@ -1851,7 +1851,7 @@
    05C8 7E                 1851 	ld	a,(hl)
    05C9 F8 02              1852 	lda	hl,2(sp)
    05CB 77                 1853 	ld	(hl),a ; 3
-                           1854 ;	paint.c 320
+                           1854 ;	mypaint.c 320
                            1855 ; genPointerGet
                            1856 ; AOP_STK for _change_icon_sloc2_1_0
    05CC F8 2D              1857 	lda	hl,45(sp)
@@ -1864,7 +1864,7 @@
    05D2 F8 33              1864 	lda	hl,51(sp)
    05D4 86                 1865 	add	a,(hl)
    05D5 4F                 1866 	ld	c,a
-                           1867 ;	paint.c 319
+                           1867 ;	mypaint.c 319
                            1868 ; genPointerGet
                            1869 ; AOP_STK for _change_icon_sloc3_1_0
    05D6 F8 2B              1870 	lda	hl,43(sp)
@@ -1902,7 +1902,7 @@
                            1902 ; genCall
    05F4 CD 00 00           1903 	call	_switch_data
    05F7 E8 06              1904 	lda	sp,6(sp)
-                           1905 ;	paint.c 318
+                           1905 ;	mypaint.c 318
                            1906 ; genPlus
                            1907 ; AOP_STK for _change_icon_y_1_1
                            1908 ; genPlusIncr
@@ -1917,7 +1917,7 @@
    0600 C3 90 04           1917 	jp	00101$
                            1918 ; genLabel
    0603                    1919 00107$:
-                           1920 ;	paint.c 317
+                           1920 ;	mypaint.c 317
                            1921 ; genPlus
                            1922 ; AOP_STK for _change_icon_x_1_1
                            1923 ; genPlusIncr
@@ -1932,7 +1932,7 @@
    060B C1                 1932 	pop bc
    060C C9                 1933 	ret
    060D                    1934 ___change_icon_end:
-                           1935 ;	paint.c 327
+                           1935 ;	mypaint.c 327
                            1936 ; genLabel
                            1937 ; genFunction
                            1938 ;	---------------------------------
@@ -1942,7 +1942,7 @@
    060D                    1942 _reset_icon:
    060D C5                 1943 	push	bc
    060E E8 EA              1944 	lda sp,-22(sp)
-                           1945 ;	paint.c 331
+                           1945 ;	mypaint.c 331
                            1946 ; genAssign
                            1947 ; AOP_STK for _reset_icon_x_1_1
    0610 F8 15              1948 	lda	hl,21(sp)
@@ -2005,7 +2005,7 @@
    0647 7E                 2005 	ld	a,(hl)
    0648 99                 2006 	sbc	a,c ; 2
    0649 D2 0E 07           2007 	jp	nc,00109$
-                           2008 ;	paint.c 332
+                           2008 ;	mypaint.c 332
                            2009 ; genAssign
                            2010 ; AOP_STK for _reset_icon_y_1_1
    064C 2B                 2011 	dec	hl
@@ -2092,7 +2092,7 @@
    0699 AF                 2092 	xor	a,a
    069A B6                 2093 	or	a,(hl)
    069B CA 08 07           2094 	jp	z,00107$
-                           2095 ;	paint.c 335
+                           2095 ;	mypaint.c 335
                            2096 ; genPointerGet
                            2097 ; AOP_STK for _reset_icon_sloc1_1_0
    069E F8 10              2098 	lda	hl,16(sp)
@@ -2145,7 +2145,7 @@
    06CD 7E                 2145 	ld	a,(hl)
    06CE F8 02              2146 	lda	hl,2(sp)
    06D0 77                 2147 	ld	(hl),a ; 3
-                           2148 ;	paint.c 334
+                           2148 ;	mypaint.c 334
                            2149 ; genPointerGet
                            2150 ; AOP_STK for _reset_icon_sloc3_1_0
    06D1 F8 0D              2151 	lda	hl,13(sp)
@@ -2158,7 +2158,7 @@
    06D7 F8 14              2158 	lda	hl,20(sp)
    06D9 86                 2159 	add	a,(hl)
    06DA 4F                 2160 	ld	c,a
-                           2161 ;	paint.c 333
+                           2161 ;	mypaint.c 333
                            2162 ; genPointerGet
                            2163 ; AOP_STK for _reset_icon_sloc4_1_0
    06DB F8 0B              2164 	lda	hl,11(sp)
@@ -2196,7 +2196,7 @@
                            2196 ; genCall
    06F9 CD 00 00           2197 	call	_switch_data
    06FC E8 06              2198 	lda	sp,6(sp)
-                           2199 ;	paint.c 332
+                           2199 ;	mypaint.c 332
                            2200 ; genPlus
                            2201 ; AOP_STK for _reset_icon_y_1_1
                            2202 ; genPlusIncr
@@ -2211,7 +2211,7 @@
    0705 C3 84 06           2211 	jp	00101$
                            2212 ; genLabel
    0708                    2213 00107$:
-                           2214 ;	paint.c 331
+                           2214 ;	mypaint.c 331
                            2215 ; genPlus
                            2216 ; AOP_STK for _reset_icon_x_1_1
                            2217 ; genPlusIncr
@@ -2226,7 +2226,7 @@
    0710 C1                 2226 	pop bc
    0711 C9                 2227 	ret
    0712                    2228 ___reset_icon_end:
-                           2229 ;	paint.c 339
+                           2229 ;	mypaint.c 339
                            2230 ; genLabel
                            2231 ; genFunction
                            2232 ;	---------------------------------
@@ -2236,28 +2236,28 @@
    0712                    2236 _splash:
    0712 C5                 2237 	push	bc
    0713 E8 FE              2238 	lda sp,-2(sp)
-                           2239 ;	paint.c 343
+                           2239 ;	mypaint.c 343
                            2240 ; genAssign
                            2241 ; AOP_HL for _cursor_x
    0715 21 05 03           2242 	ld	hl,#_cursor_x + 0
    0718 36 28              2243 	ld	(hl),#0x28
-                           2244 ;	paint.c 344
+                           2244 ;	mypaint.c 344
                            2245 ; genAssign
                            2246 ; AOP_HL for _cursor_y
    071A 21 06 03           2247 	ld	hl,#_cursor_y + 0
    071D 36 32              2248 	ld	(hl),#0x32
-                           2249 ;	paint.c 345
+                           2249 ;	mypaint.c 345
                            2250 ; genAssign
                            2251 ; AOP_HL for _current_cursor
    071F 21 03 03           2252 	ld	hl,#_current_cursor + 0
    0722 36 01              2253 	ld	(hl),#0x01
-                           2254 ;	paint.c 346
+                           2254 ;	mypaint.c 346
                            2255 ; genCall
    0724 CD 00 00           2256 	call	_set_cursor
-                           2257 ;	paint.c 347
+                           2257 ;	mypaint.c 347
                            2258 ; genCall
    0727 CD F8 00           2259 	call	_move_cursor
-                           2260 ;	paint.c 348
+                           2260 ;	mypaint.c 348
                            2261 ; genOr
                            2262 ; AOP_SFR for _LCDC_REG
                            2263 ; Type res[4] = l[4]&r[1]
@@ -2267,20 +2267,20 @@
    072E E0 00              2267 	ldh	(_LCDC_REG+0),a
                            2268 ; genLabel
    0730                    2269 00101$:
-                           2270 ;	paint.c 350
+                           2270 ;	mypaint.c 350
                            2271 ; genCmpLt
                            2272 ; AOP_HL for _cursor_x
    0730 21 05 03           2273 	ld	hl,#_cursor_x + 0
    0733 7E                 2274 	ld	a,(hl)
    0734 FE 78              2275 	cp	#0x78
    0736 D2 5F 07           2276 	jp	nc,00105$
-                           2277 ;	paint.c 351
+                           2277 ;	mypaint.c 351
                            2278 ; genCall
    0739 CD 00 00           2279 	call	_wait_vbl_done
-                           2280 ;	paint.c 352
+                           2280 ;	mypaint.c 352
                            2281 ; genCall
    073C CD F8 00           2282 	call	_move_cursor
-                           2283 ;	paint.c 353
+                           2283 ;	mypaint.c 353
                            2284 ; genIpush
    073F 3E 00              2285 	ld	a,#0x00
    0741 F5                 2286 	push	af
@@ -2304,7 +2304,7 @@
                            2304 ; genCall
    0753 CD 00 00           2305 	call	_plot
    0756 E8 04              2306 	lda	sp,4(sp)
-                           2307 ;	paint.c 350
+                           2307 ;	mypaint.c 350
                            2308 ; genPlus
                            2309 ; AOP_HL for _cursor_x
                            2310 ; genPlusIncr
@@ -2314,20 +2314,20 @@
    075C C3 30 07           2314 	jp	00101$
                            2315 ; genLabel
    075F                    2316 00105$:
-                           2317 ;	paint.c 355
+                           2317 ;	mypaint.c 355
                            2318 ; genCmpLt
                            2319 ; AOP_HL for _cursor_y
    075F 21 06 03           2320 	ld	hl,#_cursor_y + 0
    0762 7E                 2321 	ld	a,(hl)
    0763 FE 5E              2322 	cp	#0x5E
    0765 D2 8E 07           2323 	jp	nc,00109$
-                           2324 ;	paint.c 356
+                           2324 ;	mypaint.c 356
                            2325 ; genCall
    0768 CD 00 00           2326 	call	_wait_vbl_done
-                           2327 ;	paint.c 357
+                           2327 ;	mypaint.c 357
                            2328 ; genCall
    076B CD F8 00           2329 	call	_move_cursor
-                           2330 ;	paint.c 358
+                           2330 ;	mypaint.c 358
                            2331 ; genIpush
    076E 3E 00              2332 	ld	a,#0x00
    0770 F5                 2333 	push	af
@@ -2351,7 +2351,7 @@
                            2351 ; genCall
    0782 CD 00 00           2352 	call	_plot
    0785 E8 04              2353 	lda	sp,4(sp)
-                           2354 ;	paint.c 355
+                           2354 ;	mypaint.c 355
                            2355 ; genPlus
                            2356 ; AOP_HL for _cursor_y
                            2357 ; genPlusIncr
@@ -2361,7 +2361,7 @@
    078B C3 5F 07           2361 	jp	00105$
                            2362 ; genLabel
    078E                    2363 00109$:
-                           2364 ;	paint.c 360
+                           2364 ;	mypaint.c 360
                            2365 ; genCmpGt
                            2366 ; AOP_HL for _cursor_x
    078E AF                 2367 	xor	a,a
@@ -2369,13 +2369,13 @@
    0791 21 05 03           2369 	ld	hl,#_cursor_x + 0
    0794 9E                 2370 	sbc	a,(hl) ; 2
    0795 D2 BE 07           2371 	jp	nc,00113$
-                           2372 ;	paint.c 361
+                           2372 ;	mypaint.c 361
                            2373 ; genCall
    0798 CD 00 00           2374 	call	_wait_vbl_done
-                           2375 ;	paint.c 362
+                           2375 ;	mypaint.c 362
                            2376 ; genCall
    079B CD F8 00           2377 	call	_move_cursor
-                           2378 ;	paint.c 363
+                           2378 ;	mypaint.c 363
                            2379 ; genIpush
    079E 3E 00              2380 	ld	a,#0x00
    07A0 F5                 2381 	push	af
@@ -2399,7 +2399,7 @@
                            2399 ; genCall
    07B2 CD 00 00           2400 	call	_plot
    07B5 E8 04              2401 	lda	sp,4(sp)
-                           2402 ;	paint.c 360
+                           2402 ;	mypaint.c 360
                            2403 ; genMinus
                            2404 ; AOP_HL for _cursor_x
    07B7 21 05 03           2405 	ld	hl,#_cursor_x + 0
@@ -2408,7 +2408,7 @@
    07BB C3 8E 07           2408 	jp	00109$
                            2409 ; genLabel
    07BE                    2410 00113$:
-                           2411 ;	paint.c 365
+                           2411 ;	mypaint.c 365
                            2412 ; genCmpGt
                            2413 ; AOP_HL for _cursor_y
    07BE AF                 2414 	xor	a,a
@@ -2416,13 +2416,13 @@
    07C1 21 06 03           2416 	ld	hl,#_cursor_y + 0
    07C4 9E                 2417 	sbc	a,(hl) ; 2
    07C5 D2 EE 07           2418 	jp	nc,00116$
-                           2419 ;	paint.c 366
+                           2419 ;	mypaint.c 366
                            2420 ; genCall
    07C8 CD 00 00           2421 	call	_wait_vbl_done
-                           2422 ;	paint.c 367
+                           2422 ;	mypaint.c 367
                            2423 ; genCall
    07CB CD F8 00           2424 	call	_move_cursor
-                           2425 ;	paint.c 368
+                           2425 ;	mypaint.c 368
                            2426 ; genIpush
    07CE 3E 00              2427 	ld	a,#0x00
    07D0 F5                 2428 	push	af
@@ -2446,7 +2446,7 @@
                            2446 ; genCall
    07E2 CD 00 00           2447 	call	_plot
    07E5 E8 04              2448 	lda	sp,4(sp)
-                           2449 ;	paint.c 365
+                           2449 ;	mypaint.c 365
                            2450 ; genMinus
                            2451 ; AOP_HL for _cursor_y
    07E7 21 06 03           2452 	ld	hl,#_cursor_y + 0
@@ -2455,28 +2455,28 @@
    07EB C3 BE 07           2455 	jp	00113$
                            2456 ; genLabel
    07EE                    2457 00116$:
-                           2458 ;	paint.c 370
+                           2458 ;	mypaint.c 370
                            2459 ; genAssign
                            2460 ; AOP_HL for _cursor_x
    07EE 21 05 03           2461 	ld	hl,#_cursor_x + 0
    07F1 36 50              2462 	ld	(hl),#0x50
-                           2463 ;	paint.c 371
+                           2463 ;	mypaint.c 371
                            2464 ; genAssign
                            2465 ; AOP_HL for _cursor_y
    07F3 21 06 03           2466 	ld	hl,#_cursor_y + 0
    07F6 36 48              2467 	ld	(hl),#0x48
-                           2468 ;	paint.c 372
+                           2468 ;	mypaint.c 372
                            2469 ; genAssign
                            2470 ; AOP_HL for _current_cursor
    07F8 21 03 03           2471 	ld	hl,#_current_cursor + 0
    07FB 36 03              2472 	ld	(hl),#0x03
-                           2473 ;	paint.c 373
+                           2473 ;	mypaint.c 373
                            2474 ; genCall
    07FD CD 00 00           2475 	call	_set_cursor
-                           2476 ;	paint.c 374
+                           2476 ;	mypaint.c 374
                            2477 ; genCall
    0800 CD F8 00           2478 	call	_move_cursor
-                           2479 ;	paint.c 376
+                           2479 ;	mypaint.c 376
                            2480 ; genAssign
                            2481 ; AOP_STK for _splash_y_1_1
    0803 F8 01              2482 	lda	hl,1(sp)
@@ -2489,7 +2489,7 @@
    0809 7E                 2489 	ld	a,(hl)
    080A FE 5E              2490 	cp	#0x5E
    080C D2 41 08           2491 	jp	nc,00125$
-                           2492 ;	paint.c 377
+                           2492 ;	mypaint.c 377
                            2493 ; genAssign
    080F 06 29              2494 	ld	b,#0x29
                            2495 ; genLabel
@@ -2508,7 +2508,7 @@
    081A AF                 2508 	xor	a,a
    081B B6                 2509 	or	a,(hl)
    081C CA 3B 08           2510 	jp	z,00123$
-                           2511 ;	paint.c 378
+                           2511 ;	mypaint.c 378
                            2512 ; genIpush
    081F 3E 00              2513 	ld	a,#0x00
    0821 F5                 2514 	push	af
@@ -2530,7 +2530,7 @@
                            2530 ; genCall
    082E CD 00 00           2531 	call	_plot
    0831 E8 04              2532 	lda	sp,4(sp)
-                           2533 ;	paint.c 377
+                           2533 ;	mypaint.c 377
                            2534 ; genPlus
                            2535 ; genPlusIncr
    0833 78                 2536 	ld	a,b
@@ -2542,7 +2542,7 @@
    0838 C3 11 08           2542 	jp	00117$
                            2543 ; genLabel
    083B                    2544 00123$:
-                           2545 ;	paint.c 376
+                           2545 ;	mypaint.c 376
                            2546 ; genPlus
                            2547 ; AOP_STK for _splash_y_1_1
                            2548 ; genPlusIncr
@@ -2557,7 +2557,7 @@
    0843 C1                 2557 	pop bc
    0844 C9                 2558 	ret
    0845                    2559 ___splash_end:
-                           2560 ;	paint.c 383
+                           2560 ;	mypaint.c 383
                            2561 ; genLabel
                            2562 ; genFunction
                            2563 ;	---------------------------------
@@ -2567,12 +2567,12 @@
    0845                    2567 _menu:
    0845 C5                 2568 	push	bc
    0846 E8 FB              2569 	lda sp,-5(sp)
-                           2570 ;	paint.c 389
+                           2570 ;	mypaint.c 389
                            2571 ; genAssign
                            2572 ; AOP_STK for _menu_slowdown_1_1
    0848 F8 02              2573 	lda	hl,2(sp)
    084A 36 32              2574 	ld	(hl),#0x32 ; 3
-                           2575 ;	paint.c 391
+                           2575 ;	mypaint.c 391
                            2576 ; genAssign
                            2577 ; AOP_STK for _menu_i_1_1
    084C 23                 2578 	inc	hl
@@ -2586,7 +2586,7 @@
    0852 7E                 2586 	ld	a,(hl)
    0853 FE 12              2587 	cp	#0x12
    0855 D2 BA 08           2588 	jp	nc,00140$
-                           2589 ;	paint.c 393
+                           2589 ;	mypaint.c 393
                            2590 ; genCmpEq
                            2591 ; AOP_STK for _menu_i_1_1
                            2592 ; AOP_HL for _current_tool
@@ -2603,7 +2603,7 @@
    0866                    2603 00171$:
    0866 F8 00              2604 	lda	hl,0(sp)
    0868 77                 2605 	ld	(hl),a ; 3
-                           2606 ;	paint.c 394
+                           2606 ;	mypaint.c 394
                            2607 ; genPlus
                            2608 ; AOP_HL for _current_color
                            2609 ; genPlusIncr
@@ -2635,7 +2635,7 @@
    0886                    2635 00175$:
    0886 F8 00              2636 	lda	hl,0(sp)
    0888 77                 2637 	ld	(hl),a ; 3
-                           2638 ;	paint.c 395
+                           2638 ;	mypaint.c 395
                            2639 ; genPlus
                            2640 ; AOP_HL for _current_mode
                            2641 ; genPlusIncr
@@ -2666,7 +2666,7 @@
    08A4 3E 01              2666 	ld	a,#0x01
    08A6                    2667 00179$:
    08A6 4F                 2668 	ld	c,a
-                           2669 ;	paint.c 392
+                           2669 ;	mypaint.c 392
                            2670 ; genIpush
    08A7 79                 2671 	ld	a,c
    08A8 F5                 2672 	push	af
@@ -2680,7 +2680,7 @@
                            2680 ; genCall
    08AF CD 84 02           2681 	call	_set_icon
    08B2 E8 02              2682 	lda	sp,2(sp)
-                           2683 ;	paint.c 391
+                           2683 ;	mypaint.c 391
                            2684 ; genPlus
                            2685 ; AOP_STK for _menu_i_1_1
                            2686 ; genPlusIncr
@@ -2690,7 +2690,7 @@
    08B7 C3 50 08           2690 	jp	00137$
                            2691 ; genLabel
    08BA                    2692 00140$:
-                           2693 ;	paint.c 397
+                           2693 ;	mypaint.c 397
                            2694 ; genAssign
                            2695 ; AOP_HL for _current_cursor
                            2696 ; AOP_STK for _menu_cursor_1_1
@@ -2698,18 +2698,18 @@
    08BD 7E                 2698 	ld	a,(hl)
    08BE F8 01              2699 	lda	hl,1(sp)
    08C0 77                 2700 	ld	(hl),a ; 3
-                           2701 ;	paint.c 398
+                           2701 ;	mypaint.c 398
                            2702 ; genAssign
                            2703 ; AOP_HL for _current_cursor
    08C1 21 03 03           2704 	ld	hl,#_current_cursor + 0
    08C4 36 00              2705 	ld	(hl),#0x00
-                           2706 ;	paint.c 399
+                           2706 ;	mypaint.c 399
                            2707 ; genCall
    08C6 CD 00 00           2708 	call	_set_cursor
-                           2709 ;	paint.c 400
+                           2709 ;	mypaint.c 400
                            2710 ; genCall
    08C9 CD 0D 02           2711 	call	_move_menu_cursor
-                           2712 ;	paint.c 401
+                           2712 ;	mypaint.c 401
                            2713 ; genOr
                            2714 ; AOP_SFR for _LCDC_REG
                            2715 ; Type res[4] = l[4]&r[1]
@@ -2717,22 +2717,22 @@
    08CC F0 00              2717 	ldh	a,(_LCDC_REG+0) ; x
    08CE F6 02              2718 	or	a,#0x02
    08D0 E0 00              2719 	ldh	(_LCDC_REG+0),a
-                           2720 ;	paint.c 402
+                           2720 ;	mypaint.c 402
                            2721 ; genCall
    08D2 CD 00 00           2722 	call	_waitpadup
-                           2723 ;	paint.c 403
+                           2723 ;	mypaint.c 403
                            2724 ; genLabel
    08D5                    2725 00134$:
-                           2726 ;	paint.c 404
+                           2726 ;	mypaint.c 404
                            2727 ; genCall
    08D5 CD 00 00           2728 	call	_wait_vbl_done
-                           2729 ;	paint.c 405
+                           2729 ;	mypaint.c 405
                            2730 ; genCall
    08D8 CD 00 00           2731 	call	_joypad
                            2732 ; AOP_STK for _menu_key_1_1
    08DB F8 03              2733 	lda	hl,3(sp)
    08DD 73                 2734 	ld	(hl),e ; 3
-                           2735 ;	paint.c 406
+                           2735 ;	mypaint.c 406
                            2736 ; genAnd
                            2737 ; AOP_STK for _menu_key_1_1
    08DE 7E                 2738 	ld	a,(hl)
@@ -2740,14 +2740,14 @@
    08E1 20 03              2740 	jr	nz,00180$
    08E3 C3 D5 09           2741 	jp	00114$
    08E6                    2742 00180$:
-                           2743 ;	paint.c 407
+                           2743 ;	mypaint.c 407
                            2744 ; genAnd
                            2745 ; AOP_STK for _menu_key_1_1
    08E6 F8 03              2746 	lda	hl,3(sp)
    08E8 7E                 2747 	ld	a,(hl)
    08E9 CB 57              2748 	bit	2,a
    08EB CA 14 09           2749 	jp	z,00102$
-                           2750 ;	paint.c 408
+                           2750 ;	mypaint.c 408
                            2751 ; genIpush
    08EE 3E 0A              2752 	ld	a,#0x0A
    08F0 F5                 2753 	push	af
@@ -2784,14 +2784,14 @@
    0913 77                 2784 	ld	(hl),a
                            2785 ; genLabel
    0914                    2786 00102$:
-                           2787 ;	paint.c 409
+                           2787 ;	mypaint.c 409
                            2788 ; genAnd
                            2789 ; AOP_STK for _menu_key_1_1
    0914 F8 03              2790 	lda	hl,3(sp)
    0916 7E                 2791 	ld	a,(hl)
    0917 CB 5F              2792 	bit	3,a
    0919 CA 42 09           2793 	jp	z,00104$
-                           2794 ;	paint.c 410
+                           2794 ;	mypaint.c 410
                            2795 ; genIpush
    091C 3E 0A              2796 	ld	a,#0x0A
    091E F5                 2797 	push	af
@@ -2828,14 +2828,14 @@
    0941 77                 2828 	ld	(hl),a
                            2829 ; genLabel
    0942                    2830 00104$:
-                           2831 ;	paint.c 411
+                           2831 ;	mypaint.c 411
                            2832 ; genAnd
                            2833 ; AOP_STK for _menu_key_1_1
    0942 F8 03              2834 	lda	hl,3(sp)
    0944 7E                 2835 	ld	a,(hl)
    0945 CB 4F              2836 	bit	1,a
    0947 CA 70 09           2837 	jp	z,00106$
-                           2838 ;	paint.c 412
+                           2838 ;	mypaint.c 412
                            2839 ; genIpush
    094A 3E 0A              2840 	ld	a,#0x0A
    094C F5                 2841 	push	af
@@ -2872,14 +2872,14 @@
    096F 77                 2872 	ld	(hl),a
                            2873 ; genLabel
    0970                    2874 00106$:
-                           2875 ;	paint.c 413
+                           2875 ;	mypaint.c 413
                            2876 ; genAnd
                            2877 ; AOP_STK for _menu_key_1_1
    0970 F8 03              2878 	lda	hl,3(sp)
    0972 7E                 2879 	ld	a,(hl)
    0973 CB 47              2880 	bit	0,a
    0975 CA 9E 09           2881 	jp	z,00108$
-                           2882 ;	paint.c 414
+                           2882 ;	mypaint.c 414
                            2883 ; genIpush
    0978 3E 0A              2884 	ld	a,#0x0A
    097A F5                 2885 	push	af
@@ -2916,10 +2916,10 @@
    099D 77                 2916 	ld	(hl),a
                            2917 ; genLabel
    099E                    2918 00108$:
-                           2919 ;	paint.c 415
+                           2919 ;	mypaint.c 415
                            2920 ; genCall
    099E CD 0D 02           2921 	call	_move_menu_cursor
-                           2922 ;	paint.c 416
+                           2922 ;	mypaint.c 416
                            2923 ; genLabel
    09A1                    2924 00110$:
                            2925 ; genIfx
@@ -2952,10 +2952,10 @@
    09BC AF                 2952 	xor	a,a
    09BD B6                 2953 	or	a,(hl)
    09BE CA CE 09           2954 	jp	z,00112$
-                           2955 ;	paint.c 417
+                           2955 ;	mypaint.c 417
                            2956 ; genCall
    09C1 CD 00 00           2957 	call	_wait_vbl_done
-                           2958 ;	paint.c 418
+                           2958 ;	mypaint.c 418
                            2959 ; genMinus
                            2960 ; AOP_STK for _menu_slowdown_1_1
    09C4 F8 02              2961 	lda	hl,2(sp)
@@ -2969,7 +2969,7 @@
    09CB C3 A1 09           2969 	jp	00110$
                            2970 ; genLabel
    09CE                    2971 00112$:
-                           2972 ;	paint.c 420
+                           2972 ;	mypaint.c 420
                            2973 ; genAssign
                            2974 ; AOP_STK for _menu_slowdown_1_1
    09CE F8 02              2975 	lda	hl,2(sp)
@@ -2978,21 +2978,21 @@
    09D2 C3 D9 09           2978 	jp	00115$
                            2979 ; genLabel
    09D5                    2980 00114$:
-                           2981 ;	paint.c 422
+                           2981 ;	mypaint.c 422
                            2982 ; genAssign
                            2983 ; AOP_STK for _menu_slowdown_1_1
    09D5 F8 02              2984 	lda	hl,2(sp)
    09D7 36 32              2985 	ld	(hl),#0x32 ; 3
                            2986 ; genLabel
    09D9                    2987 00115$:
-                           2988 ;	paint.c 423
+                           2988 ;	mypaint.c 423
                            2989 ; genAnd
                            2990 ; AOP_STK for _menu_key_1_1
    09D9 F8 03              2991 	lda	hl,3(sp)
    09DB 7E                 2992 	ld	a,(hl)
    09DC CB 67              2993 	bit	4,a
    09DE CA D0 0A           2994 	jp	z,00135$
-                           2995 ;	paint.c 424
+                           2995 ;	mypaint.c 424
                            2996 ; genCmpGt
                            2997 ; AOP_HL for _menu_cursor_pos
    09E1 AF                 2998 	xor	a,a
@@ -3000,7 +3000,7 @@
    09E4 21 04 03           3000 	ld	hl,#_menu_cursor_pos + 0
    09E7 9E                 3001 	sbc	a,(hl) ; 2
    09E8 DA 43 0A           3002 	jp	c,00130$
-                           3003 ;	paint.c 425
+                           3003 ;	mypaint.c 425
                            3004 ; genCmpEq
                            3005 ; AOP_HL for _menu_cursor_pos
                            3006 ; AOP_HL for _current_tool
@@ -3011,7 +3011,7 @@
    09F3 20 03              3011 	jr	nz,00183$
    09F5 C3 D0 0A           3012 	jp	00135$
    09F8                    3013 00183$:
-                           3014 ;	paint.c 426
+                           3014 ;	mypaint.c 426
                            3015 ; genIpush
    09F8 3E 00              3016 	ld	a,#0x00
    09FA F5                 3017 	push	af
@@ -3025,7 +3025,7 @@
                            3025 ; genCall
    0A02 CD 1F 04           3026 	call	_change_icon
    0A05 E8 02              3027 	lda	sp,2(sp)
-                           3028 ;	paint.c 427
+                           3028 ;	mypaint.c 427
                            3029 ; genAssign
                            3030 ; AOP_HL for _menu_cursor_pos
                            3031 ; AOP_HL for _current_tool
@@ -3033,7 +3033,7 @@
    0A0A 7E                 3033 	ld	a,(hl)
    0A0B 21 00 03           3034 	ld	hl,#_current_tool + 0
    0A0E 77                 3035 	ld	(hl),a
-                           3036 ;	paint.c 428
+                           3036 ;	mypaint.c 428
                            3037 ; genIpush
    0A0F 3E 01              3038 	ld	a,#0x01
    0A11 F5                 3039 	push	af
@@ -3046,7 +3046,7 @@
                            3046 ; genCall
    0A16 CD 1F 04           3047 	call	_change_icon
    0A19 E8 02              3048 	lda	sp,2(sp)
-                           3049 ;	paint.c 429
+                           3049 ;	mypaint.c 429
                            3050 ; genIpush
    0A1B 3E 0A              3051 	ld	a,#0x0A
    0A1D F5                 3052 	push	af
@@ -3085,7 +3085,7 @@
    0A40 C3 D0 0A           3085 	jp	00135$
                            3086 ; genLabel
    0A43                    3087 00130$:
-                           3088 ;	paint.c 431
+                           3088 ;	mypaint.c 431
                            3089 ; genCmpLt
                            3090 ; AOP_HL for _menu_cursor_pos
    0A43 21 04 03           3091 	ld	hl,#_menu_cursor_pos + 0
@@ -3098,7 +3098,7 @@
    0A4D 3E 0D              3098 	ld	a,#0x0D
    0A4F 9E                 3099 	sbc	a,(hl) ; 2
    0A50 DA 8B 0A           3100 	jp	c,00126$
-                           3101 ;	paint.c 432
+                           3101 ;	mypaint.c 432
                            3102 ; genPlus
                            3103 ; AOP_HL for _current_color
                            3104 ; genPlusIncr
@@ -3114,7 +3114,7 @@
                            3114 ; Rule 5
    0A5F CA D0 0A           3115 	jp	z,00135$
    0A62                    3116 00184$:
-                           3117 ;	paint.c 433
+                           3117 ;	mypaint.c 433
                            3118 ; genIpush
    0A62 3E 00              3119 	ld	a,#0x00
    0A64 F5                 3120 	push	af
@@ -3126,7 +3126,7 @@
                            3126 ; genCall
    0A69 CD 1F 04           3127 	call	_change_icon
    0A6C E8 02              3128 	lda	sp,2(sp)
-                           3129 ;	paint.c 434
+                           3129 ;	mypaint.c 434
                            3130 ; genMinus
                            3131 ; AOP_HL for _menu_cursor_pos
                            3132 ; AOP_HL for _current_color
@@ -3135,7 +3135,7 @@
    0A72 C6 F6              3135 	add	a,#0xF6
    0A74 21 01 03           3136 	ld	hl,#_current_color + 0
    0A77 77                 3137 	ld	(hl),a
-                           3138 ;	paint.c 435
+                           3138 ;	mypaint.c 435
                            3139 ; genPlus
                            3140 ; AOP_HL for _current_color
                            3141 ; genPlusIncr
@@ -3157,7 +3157,7 @@
    0A88 C3 D0 0A           3157 	jp	00135$
                            3158 ; genLabel
    0A8B                    3159 00126$:
-                           3160 ;	paint.c 437
+                           3160 ;	mypaint.c 437
                            3161 ; genCmpLt
                            3162 ; AOP_HL for _menu_cursor_pos
    0A8B 21 04 03           3163 	ld	hl,#_menu_cursor_pos + 0
@@ -3170,7 +3170,7 @@
    0A95 3E 11              3170 	ld	a,#0x11
    0A97 9E                 3171 	sbc	a,(hl) ; 2
    0A98 DA D0 0A           3172 	jp	c,00135$
-                           3173 ;	paint.c 438
+                           3173 ;	mypaint.c 438
                            3174 ; genPlus
                            3175 ; AOP_HL for _current_mode
                            3176 ; genPlusIncr
@@ -3186,7 +3186,7 @@
                            3186 ; Rule 5
    0AA7 CA D0 0A           3187 	jp	z,00135$
    0AAA                    3188 00185$:
-                           3189 ;	paint.c 439
+                           3189 ;	mypaint.c 439
                            3190 ; genIpush
    0AAA 3E 00              3191 	ld	a,#0x00
    0AAC F5                 3192 	push	af
@@ -3198,7 +3198,7 @@
                            3198 ; genCall
    0AB1 CD 1F 04           3199 	call	_change_icon
    0AB4 E8 02              3200 	lda	sp,2(sp)
-                           3201 ;	paint.c 440
+                           3201 ;	mypaint.c 440
                            3202 ; genMinus
                            3203 ; AOP_HL for _menu_cursor_pos
                            3204 ; AOP_HL for _current_mode
@@ -3207,7 +3207,7 @@
    0ABA C6 F2              3207 	add	a,#0xF2
    0ABC 21 02 03           3208 	ld	hl,#_current_mode + 0
    0ABF 77                 3209 	ld	(hl),a
-                           3210 ;	paint.c 441
+                           3210 ;	mypaint.c 441
                            3211 ; genPlus
                            3212 ; AOP_HL for _current_mode
                            3213 ; genPlusIncr
@@ -3227,7 +3227,7 @@
    0ACE E8 02              3227 	lda	sp,2(sp)
                            3228 ; genLabel
    0AD0                    3229 00135$:
-                           3230 ;	paint.c 445
+                           3230 ;	mypaint.c 445
                            3231 ; genCmpEq
                            3232 ; AOP_STK for _menu_key_1_1
    0AD0 F8 03              3233 	lda	hl,3(sp)
@@ -3238,10 +3238,10 @@
    0ADA                    3238 00186$:
    0ADA C3 D5 08           3239 	jp	00134$
    0ADD                    3240 00187$:
-                           3241 ;	paint.c 446
+                           3241 ;	mypaint.c 446
                            3242 ; genCall
    0ADD CD 00 00           3243 	call	_waitpadup
-                           3244 ;	paint.c 447
+                           3244 ;	mypaint.c 447
                            3245 ; genAssign
                            3246 ; AOP_STK for _menu_i_1_1
    0AE0 F8 04              3247 	lda	hl,4(sp)
@@ -3254,7 +3254,7 @@
    0AE6 7E                 3254 	ld	a,(hl)
    0AE7 FE 12              3255 	cp	#0x12
    0AE9 D2 FA 0A           3256 	jp	nc,00144$
-                           3257 ;	paint.c 448
+                           3257 ;	mypaint.c 448
                            3258 ; genIpush
                            3259 ; AOP_STK for _menu_i_1_1
    0AEC 7E                 3260 	ld	a,(hl)
@@ -3263,7 +3263,7 @@
                            3263 ; genCall
    0AEF CD 0D 06           3264 	call	_reset_icon
    0AF2 E8 01              3265 	lda	sp,1(sp)
-                           3266 ;	paint.c 447
+                           3266 ;	mypaint.c 447
                            3267 ; genPlus
                            3268 ; AOP_STK for _menu_i_1_1
                            3269 ; genPlusIncr
@@ -3273,13 +3273,13 @@
    0AF7 C3 E4 0A           3273 	jp	00141$
                            3274 ; genLabel
    0AFA                    3275 00144$:
-                           3276 ;	paint.c 449
+                           3276 ;	mypaint.c 449
                            3277 ; genAnd
                            3278 ; AOP_SFR for _LCDC_REG
    0AFA F0 00              3279 	ldh	a,(_LCDC_REG+0) ; x
    0AFC E6 FD              3280 	and	a,#0xFD
    0AFE E0 00              3281 	ldh	(_LCDC_REG+0),a
-                           3282 ;	paint.c 450
+                           3282 ;	mypaint.c 450
                            3283 ; genAssign
                            3284 ; AOP_STK for _menu_cursor_1_1
                            3285 ; AOP_HL for _current_cursor
@@ -3294,7 +3294,7 @@
    0B09 C1                 3294 	pop bc
    0B0A C9                 3295 	ret
    0B0B                    3296 ___menu_end:
-                           3297 ;	paint.c 453
+                           3297 ;	mypaint.c 453
                            3298 ; genLabel
                            3299 ; genFunction
                            3300 ;	---------------------------------
@@ -3304,12 +3304,12 @@
    0B0B                    3304 _run:
    0B0B C5                 3305 	push	bc
    0B0C E8 FB              3306 	lda sp,-5(sp)
-                           3307 ;	paint.c 459
+                           3307 ;	mypaint.c 459
                            3308 ; genAssign
                            3309 ; AOP_STK for _run_slowdown_1_1
    0B0E F8 03              3310 	lda	hl,3(sp)
    0B10 36 0A              3311 	ld	(hl),#0x0A ; 3
-                           3312 ;	paint.c 460
+                           3312 ;	mypaint.c 460
                            3313 ; genAssign
                            3314 ; AOP_STK for _run_erased_1_1
    0B12 2B                 3315 	dec	hl
@@ -3319,13 +3319,13 @@
                            3319 ; AOP_STK for _run_drawn_1_1
    0B16 23                 3320 	inc	hl
    0B17 36 00              3321 	ld	(hl),#0x00 ; 3
-                           3322 ;	paint.c 462
+                           3322 ;	mypaint.c 462
                            3323 ; genCall
    0B19 CD 00 00           3324 	call	_set_cursor
-                           3325 ;	paint.c 463
+                           3325 ;	mypaint.c 463
                            3326 ; genCall
    0B1C CD F8 00           3327 	call	_move_cursor
-                           3328 ;	paint.c 464
+                           3328 ;	mypaint.c 464
                            3329 ; genOr
                            3330 ; AOP_SFR for _LCDC_REG
                            3331 ; Type res[4] = l[4]&r[1]
@@ -3333,19 +3333,19 @@
    0B1F F0 00              3333 	ldh	a,(_LCDC_REG+0) ; x
    0B21 F6 02              3334 	or	a,#0x02
    0B23 E0 00              3335 	ldh	(_LCDC_REG+0),a
-                           3336 ;	paint.c 466
+                           3336 ;	mypaint.c 466
                            3337 ; genLabel
    0B25                    3338 00133$:
-                           3339 ;	paint.c 467
+                           3339 ;	mypaint.c 467
                            3340 ; genCall
    0B25 CD 00 00           3341 	call	_wait_vbl_done
-                           3342 ;	paint.c 468
+                           3342 ;	mypaint.c 468
                            3343 ; genCall
    0B28 CD 00 00           3344 	call	_joypad
                            3345 ; AOP_STK for _run_key_1_1
    0B2B F8 04              3346 	lda	hl,4(sp)
    0B2D 73                 3347 	ld	(hl),e ; 3
-                           3348 ;	paint.c 469
+                           3348 ;	mypaint.c 469
                            3349 ; genAnd
                            3350 ; AOP_STK for _run_key_1_1
    0B2E 7E                 3351 	ld	a,(hl)
@@ -3353,7 +3353,7 @@
    0B31 20 03              3353 	jr	nz,00155$
    0B33 C3 BE 0B           3354 	jp	00118$
    0B36                    3355 00155$:
-                           3356 ;	paint.c 470
+                           3356 ;	mypaint.c 470
                            3357 ; genAnd
                            3358 ; AOP_STK for _run_key_1_1
    0B36 F8 04              3359 	lda	hl,4(sp)
@@ -3367,13 +3367,13 @@
    0B41 21 06 03           3367 	ld	hl,#_cursor_y + 0
    0B44 9E                 3368 	sbc	a,(hl) ; 2
    0B45 D2 49 0B           3369 	jp	nc,00102$
-                           3370 ;	paint.c 471
+                           3370 ;	mypaint.c 471
                            3371 ; genMinus
                            3372 ; AOP_HL for _cursor_y
    0B48 35                 3373 	dec	(hl)
                            3374 ; genLabel
    0B49                    3375 00102$:
-                           3376 ;	paint.c 472
+                           3376 ;	mypaint.c 472
                            3377 ; genAnd
                            3378 ; AOP_STK for _run_key_1_1
    0B49 F8 04              3379 	lda	hl,4(sp)
@@ -3386,14 +3386,14 @@
    0B54 7E                 3386 	ld	a,(hl)
    0B55 FE 8F              3387 	cp	#0x8F
    0B57 D2 5B 0B           3388 	jp	nc,00105$
-                           3389 ;	paint.c 473
+                           3389 ;	mypaint.c 473
                            3390 ; genPlus
                            3391 ; AOP_HL for _cursor_y
                            3392 ; genPlusIncr
    0B5A 34                 3393 	inc	(hl)
                            3394 ; genLabel
    0B5B                    3395 00105$:
-                           3396 ;	paint.c 474
+                           3396 ;	mypaint.c 474
                            3397 ; genAnd
                            3398 ; AOP_STK for _run_key_1_1
    0B5B F8 04              3399 	lda	hl,4(sp)
@@ -3407,13 +3407,13 @@
    0B66 21 05 03           3407 	ld	hl,#_cursor_x + 0
    0B69 9E                 3408 	sbc	a,(hl) ; 2
    0B6A D2 6E 0B           3409 	jp	nc,00108$
-                           3410 ;	paint.c 475
+                           3410 ;	mypaint.c 475
                            3411 ; genMinus
                            3412 ; AOP_HL for _cursor_x
    0B6D 35                 3413 	dec	(hl)
                            3414 ; genLabel
    0B6E                    3415 00108$:
-                           3416 ;	paint.c 476
+                           3416 ;	mypaint.c 476
                            3417 ; genAnd
                            3418 ; AOP_STK for _run_key_1_1
    0B6E F8 04              3419 	lda	hl,4(sp)
@@ -3426,17 +3426,17 @@
    0B79 7E                 3426 	ld	a,(hl)
    0B7A FE 9F              3427 	cp	#0x9F
    0B7C D2 80 0B           3428 	jp	nc,00111$
-                           3429 ;	paint.c 477
+                           3429 ;	mypaint.c 477
                            3430 ; genPlus
                            3431 ; AOP_HL for _cursor_x
                            3432 ; genPlusIncr
    0B7F 34                 3433 	inc	(hl)
                            3434 ; genLabel
    0B80                    3435 00111$:
-                           3436 ;	paint.c 478
+                           3436 ;	mypaint.c 478
                            3437 ; genCall
    0B80 CD F8 00           3438 	call	_move_cursor
-                           3439 ;	paint.c 479
+                           3439 ;	mypaint.c 479
                            3440 ; genLabel
    0B83                    3441 00114$:
                            3442 ; genIfx
@@ -3469,10 +3469,10 @@
    0B9E AF                 3469 	xor	a,a
    0B9F B6                 3470 	or	a,(hl)
    0BA0 CA B0 0B           3471 	jp	z,00116$
-                           3472 ;	paint.c 480
+                           3472 ;	mypaint.c 480
                            3473 ; genCall
    0BA3 CD 00 00           3474 	call	_wait_vbl_done
-                           3475 ;	paint.c 481
+                           3475 ;	mypaint.c 481
                            3476 ; genMinus
                            3477 ; AOP_STK for _run_slowdown_1_1
    0BA6 F8 03              3478 	lda	hl,3(sp)
@@ -3486,12 +3486,12 @@
    0BAD C3 83 0B           3486 	jp	00114$
                            3487 ; genLabel
    0BB0                    3488 00116$:
-                           3489 ;	paint.c 483
+                           3489 ;	mypaint.c 483
                            3490 ; genAssign
                            3491 ; AOP_STK for _run_slowdown_1_1
    0BB0 F8 03              3492 	lda	hl,3(sp)
    0BB2 36 01              3493 	ld	(hl),#0x01 ; 3
-                           3494 ;	paint.c 484
+                           3494 ;	mypaint.c 484
                            3495 ; genAssign
                            3496 ; AOP_STK for _run_erased_1_1
    0BB4 2B                 3497 	dec	hl
@@ -3505,36 +3505,36 @@
    0BBB C3 C2 0B           3505 	jp	00119$
                            3506 ; genLabel
    0BBE                    3507 00118$:
-                           3508 ;	paint.c 486
+                           3508 ;	mypaint.c 486
                            3509 ; genAssign
                            3510 ; AOP_STK for _run_slowdown_1_1
    0BBE F8 03              3511 	lda	hl,3(sp)
    0BC0 36 0A              3512 	ld	(hl),#0x0A ; 3
                            3513 ; genLabel
    0BC2                    3514 00119$:
-                           3515 ;	paint.c 487
+                           3515 ;	mypaint.c 487
                            3516 ; genAnd
                            3517 ; AOP_STK for _run_key_1_1
    0BC2 F8 04              3518 	lda	hl,4(sp)
    0BC4 7E                 3519 	ld	a,(hl)
    0BC5 CB 77              3520 	bit	6,a
    0BC7 CA DF 0B           3521 	jp	z,00121$
-                           3522 ;	paint.c 488
+                           3522 ;	mypaint.c 488
                            3523 ; genAnd
                            3524 ; AOP_SFR for _LCDC_REG
    0BCA F0 00              3525 	ldh	a,(_LCDC_REG+0) ; x
    0BCC E6 FD              3526 	and	a,#0xFD
    0BCE E0 00              3527 	ldh	(_LCDC_REG+0),a
-                           3528 ;	paint.c 489
+                           3528 ;	mypaint.c 489
                            3529 ; genCall
    0BD0 CD 45 08           3530 	call	_menu
-                           3531 ;	paint.c 490
+                           3531 ;	mypaint.c 490
                            3532 ; genCall
    0BD3 CD 00 00           3533 	call	_set_cursor
-                           3534 ;	paint.c 491
+                           3534 ;	mypaint.c 491
                            3535 ; genCall
    0BD6 CD F8 00           3536 	call	_move_cursor
-                           3537 ;	paint.c 492
+                           3537 ;	mypaint.c 492
                            3538 ; genOr
                            3539 ; AOP_SFR for _LCDC_REG
                            3540 ; Type res[4] = l[4]&r[1]
@@ -3544,7 +3544,7 @@
    0BDD E0 00              3544 	ldh	(_LCDC_REG+0),a
                            3545 ; genLabel
    0BDF                    3546 00121$:
-                           3547 ;	paint.c 494
+                           3547 ;	mypaint.c 494
                            3548 ; genAnd
                            3549 ; AOP_STK for _run_key_1_1
    0BDF F8 04              3550 	lda	hl,4(sp)
@@ -3559,7 +3559,7 @@
    0BED                    3559 00158$:
    0BED C3 31 0C           3560 	jp	00125$
    0BF0                    3561 00159$:
-                           3562 ;	paint.c 495
+                           3562 ;	mypaint.c 495
                            3563 ; genIfx
                            3564 ; AOP_STK for _run_drawn_1_1
    0BF0 AF                 3565 	xor	a,a
@@ -3567,12 +3567,12 @@
    0BF3 B6                 3567 	or	a,(hl)
    0BF4 B7                 3568 	or	a,a
    0BF5 C2 35 0C           3569 	jp	nz,00126$
-                           3570 ;	paint.c 496
+                           3570 ;	mypaint.c 496
                            3571 ; genPlus
                            3572 ; AOP_STK for _run_drawn_1_1
                            3573 ; genPlusIncr
    0BF8 34                 3574 	inc	(hl)
-                           3575 ;	paint.c 497
+                           3575 ;	mypaint.c 497
                            3576 ; genAssign
                            3577 ; AOP_HL for _current_mode
    0BF9 21 02 03           3578 	ld	hl,#_current_mode + 0
@@ -3628,14 +3628,14 @@
    0C2E C3 35 0C           3628 	jp	00126$
                            3629 ; genLabel
    0C31                    3630 00125$:
-                           3631 ;	paint.c 500
+                           3631 ;	mypaint.c 500
                            3632 ; genAssign
                            3633 ; AOP_STK for _run_drawn_1_1
    0C31 F8 02              3634 	lda	hl,2(sp)
    0C33 36 00              3635 	ld	(hl),#0x00 ; 3
                            3636 ; genLabel
    0C35                    3637 00126$:
-                           3638 ;	paint.c 501
+                           3638 ;	mypaint.c 501
                            3639 ; genAnd
                            3640 ; AOP_STK for _run_key_1_1
    0C35 F8 04              3641 	lda	hl,4(sp)
@@ -3650,7 +3650,7 @@
    0C43                    3650 00160$:
    0C43 C3 6B 0C           3651 	jp	00130$
    0C46                    3652 00161$:
-                           3653 ;	paint.c 502
+                           3653 ;	mypaint.c 502
                            3654 ; genIfx
                            3655 ; AOP_STK for _run_erased_1_1
    0C46 AF                 3656 	xor	a,a
@@ -3658,12 +3658,12 @@
    0C49 B6                 3658 	or	a,(hl)
    0C4A B7                 3659 	or	a,a
    0C4B C2 25 0B           3660 	jp	nz,00133$
-                           3661 ;	paint.c 503
+                           3661 ;	mypaint.c 503
                            3662 ; genPlus
                            3663 ; AOP_STK for _run_erased_1_1
                            3664 ; genPlusIncr
    0C4E 34                 3665 	inc	(hl)
-                           3666 ;	paint.c 504
+                           3666 ;	mypaint.c 504
                            3667 ; genIpush
    0C4F 3E 00              3668 	ld	a,#0x00
    0C51 F5                 3669 	push	af
@@ -3691,7 +3691,7 @@
    0C68 C3 25 0B           3691 	jp	00133$
                            3692 ; genLabel
    0C6B                    3693 00130$:
-                           3694 ;	paint.c 507
+                           3694 ;	mypaint.c 507
                            3695 ; genAssign
                            3696 ; AOP_STK for _run_erased_1_1
    0C6B F8 01              3697 	lda	hl,1(sp)
@@ -3705,7 +3705,7 @@
    0C74 C1                 3705 	pop bc
    0C75 C9                 3706 	ret
    0C76                    3707 ___run_end:
-                           3708 ;	paint.c 511
+                           3708 ;	mypaint.c 511
                            3709 ; genLabel
                            3710 ; genFunction
                            3711 ;	---------------------------------
@@ -3714,50 +3714,50 @@
    0C76                    3714 ___main_start:
    0C76                    3715 _main:
    0C76 C5                 3716 	push	bc
-                           3717 ;	paint.c 514
+                           3717 ;	mypaint.c 514
                            3718 ; genAssign
                            3719 ; AOP_SFR for _OBP1_REG
    0C77 3E E0              3720 	ld	a,#0xE0
    0C79 E0 00              3721 	ldh	(_OBP1_REG+0),a
-                           3722 ;	paint.c 516
+                           3722 ;	mypaint.c 516
                            3723 ; genCall
    0C7B CD 12 07           3724 	call	_splash
-                           3725 ;	paint.c 518
+                           3725 ;	mypaint.c 518
                            3726 ; genAssign
                            3727 ; AOP_HL for _current_tool
    0C7E 21 00 03           3728 	ld	hl,#_current_tool + 0
    0C81 36 00              3729 	ld	(hl),#0x00
-                           3730 ;	paint.c 519
+                           3730 ;	mypaint.c 519
                            3731 ; genAssign
                            3732 ; AOP_HL for _current_color
    0C83 21 01 03           3733 	ld	hl,#_current_color + 0
    0C86 36 03              3734 	ld	(hl),#0x03
-                           3735 ;	paint.c 520
+                           3735 ;	mypaint.c 520
                            3736 ; genAssign
                            3737 ; AOP_HL for _current_mode
    0C88 21 02 03           3738 	ld	hl,#_current_mode + 0
    0C8B 36 00              3739 	ld	(hl),#0x00
-                           3740 ;	paint.c 521
+                           3740 ;	mypaint.c 521
                            3741 ; genAssign
                            3742 ; AOP_HL for _current_cursor
    0C8D 21 03 03           3743 	ld	hl,#_current_cursor + 0
    0C90 36 01              3744 	ld	(hl),#0x01
-                           3745 ;	paint.c 522
+                           3745 ;	mypaint.c 522
                            3746 ; genAssign
                            3747 ; AOP_HL for _menu_cursor_pos
    0C92 21 04 03           3748 	ld	hl,#_menu_cursor_pos + 0
    0C95 36 00              3749 	ld	(hl),#0x00
-                           3750 ;	paint.c 523
+                           3750 ;	mypaint.c 523
                            3751 ; genAssign
                            3752 ; AOP_HL for _cursor_x
    0C97 21 05 03           3753 	ld	hl,#_cursor_x + 0
    0C9A 36 50              3754 	ld	(hl),#0x50
-                           3755 ;	paint.c 524
+                           3755 ;	mypaint.c 524
                            3756 ; genAssign
                            3757 ; AOP_HL for _cursor_y
    0C9C 21 06 03           3758 	ld	hl,#_cursor_y + 0
    0C9F 36 48              3759 	ld	(hl),#0x48
-                           3760 ;	paint.c 526
+                           3760 ;	mypaint.c 526
                            3761 ; genCall
    0CA1 CD 0B 0B           3762 	call	_run
                            3763 ; genLabel

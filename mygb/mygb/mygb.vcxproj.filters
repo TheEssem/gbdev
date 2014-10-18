@@ -13,55 +13,61 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\examples">
+      <UniqueIdentifier>{471a4bfd-27b1-4b74-8fe2-0da8d24517d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="examples\gb\bank_0.c">
+    <ClCompile Include="examples\gb\mypaint.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\gb\bank_0.c">
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\bank_1.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\bank_2.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\bank_3.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\banks.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\comm.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\filltest.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\fonts.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\fprpn.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="examples\gb\paint.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\irq.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\gb\paint.c">
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\ram_fn.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\rand.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\rpn.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\samptest.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
     <ClCompile Include="examples\gb\sound.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\examples</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,9 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="examples\gb\run.bat">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="examples\gb\Makefile">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

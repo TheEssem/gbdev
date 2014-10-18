@@ -399,7 +399,7 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE rand.o
-		NAME lcc34120
+		NAME lcc12600
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gb/gb.lib
 		MODULE cgb.o

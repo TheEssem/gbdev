@@ -33,23 +33,23 @@ void main(void)
     
     /* IBM font */
     font_set(ibm_font);
-    printf("Font demo.\n\n");
+    printf("Hello Claire xxx.\n\n");
 
-    printf("IBM Font #!?123\n");
+ //   printf("IBM Font #!?123\n");
 
-    /* In italic */
-    font_set(italic_font);
-    for (i=1; i!=5; i++) {
-	printf("In italics, line %u\n", i);
-    }
+ //   /* In italic */
+ //   font_set(italic_font);
+ //   for (i=1; i!=5; i++) {
+	//printf("In italics, line %u\n", i);
+ //   }
 
-    /* With a minimal, colour changed font */
-    font_set(min_font);
-    printf("Minimal 36 tile font\n");
+ //   /* With a minimal, colour changed font */
+ //   font_set(min_font);
+ //   printf("Minimal 36 tile font\n");
 
-    /* Done */
-    font_set(ibm_font);
-    printf("\nDone!");
+ //   /* Done */
+ //   font_set(ibm_font);
+ //   printf("\nDone!");
 }
 
     

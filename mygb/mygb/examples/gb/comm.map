@@ -385,7 +385,7 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE comm.o
-		NAME lcc98520
+		NAME lcc60160
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gb/gb.lib
 		MODULE cgb.o

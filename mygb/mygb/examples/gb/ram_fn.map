@@ -397,7 +397,7 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE ram_fn.o
-		NAME lcc62200
+		NAME lcc85920
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gb/gb.lib
 		MODULE cgb.o

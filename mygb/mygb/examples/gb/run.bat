@@ -1,1 +1,1 @@
-cmd.exe /c "..\..\..\..\VisualBoyAdvance-M.exe fonts.gb"
+cmd.exe /c "..\..\..\..\VisualBoyAdvance-M.exe mypaint.gb"

@@ -1,6 +1,7 @@
 CC	= ../../bin/lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG
 
-BINS	= galaxy.gb \
+BINS	= mypaint.gb \
+	galaxy.gb \
 	space.gb \
 	paint.gb \
 	rpn.gb \

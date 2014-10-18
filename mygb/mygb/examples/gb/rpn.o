@@ -1,6 +1,6 @@
 XL
 H 8 areas 18 global symbols
-M lcc72680
+M lcc84240
 S _isalpha Ref0000
 S _isspace Ref0000
 S __mulsint Ref0000

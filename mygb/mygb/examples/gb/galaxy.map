@@ -329,7 +329,7 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE galaxy.o
-		NAME lcc19480
+		NAME lcc104280
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gb/gb.lib
 		MODULE cgb.o

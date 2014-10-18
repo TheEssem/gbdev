@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Sat Oct 18 13:08:43 2014
+                              3 ; Version 2.2.1 Sat Oct 18 13:20:10 2014
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc109240
+                              6 	.module lcc54240
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -203,7 +203,7 @@
    0000                     203 ___main_start:
    0000                     204 _main:
    0000 C5                  205 	push	bc
-   0001 E8 FA               206 	lda sp,-6(sp)
+   0001 E8 FE               206 	lda sp,-2(sp)
                             207 ;	fonts.c 18
                             208 ; genCall
    0003 CD 00 00            209 	call	_font_init
@@ -214,7 +214,7 @@
                             214 ; genCall
    000A CD 00 00            215 	call	_font_load
                             216 ; AOP_STK for _main_ibm_font_1_1
-   000D F8 07               217 	lda	hl,7(sp)
+   000D F8 03               217 	lda	hl,3(sp)
    000F 72                  218 	ld	(hl),d ; 3
    0010 2B                  219 	dec	hl
    0011 73                  220 	ld	(hl),e ; 3
@@ -225,199 +225,80 @@
    0017 E5                  225 	push	hl
                             226 ; genCall
    0018 CD 00 00            227 	call	_font_load
-                            228 ; AOP_STK for _main_italic_font_1_1
-   001B F8 05               229 	lda	hl,5(sp)
-   001D 72                  230 	ld	(hl),d ; 3
-   001E 2B                  231 	dec	hl
-   001F 73                  232 	ld	(hl),e ; 3
-   0020 E8 02               233 	lda	sp,2(sp)
-                            234 ;	fonts.c 25
-                            235 ; genIpush
-   0022 3E 00               236 	ld	a,#0x00
-   0024 F5                  237 	push	af
-   0025 33                  238 	inc	sp
-                            239 ; genIpush
-   0026 3E 02               240 	ld	a,#0x02
-   0028 F5                  241 	push	af
-   0029 33                  242 	inc	sp
-                            243 ; genIpush
-   002A 3E 00               244 	ld	a,#0x00
-   002C F5                  245 	push	af
-   002D 33                  246 	inc	sp
-                            247 ; genCall
-   002E CD 00 00            248 	call	_color
-   0031 E8 03               249 	lda	sp,3(sp)
-                            250 ;	fonts.c 27
-                            251 ; genIpush
-   0033 21 00 00            252 	ld	hl,#_font_min + 0
-   0036 E5                  253 	push	hl
-                            254 ; genCall
-   0037 CD 00 00            255 	call	_font_load
-                            256 ; AOP_STK for _main_min_font_1_1
-   003A F8 03               257 	lda	hl,3(sp)
-   003C 72                  258 	ld	(hl),d ; 3
-   003D 2B                  259 	dec	hl
-   003E 73                  260 	ld	(hl),e ; 3
-   003F E8 02               261 	lda	sp,2(sp)
-                            262 ;	fonts.c 30
-                            263 ; genCall
-   0041 CD 00 00            264 	call	_get_mode
-   0044 4B                  265 	ld	c,e
-                            266 ; genOr
-                            267 ; Type res[2] = l[2]&r[1]
-                            268 ; Size res[1] = l[1]&r[1]
-   0045 79                  269 	ld	a,c
-   0046 F6 04               270 	or	a,#0x04
-   0048 4F                  271 	ld	c,a
-                            272 ; genIpush
-   0049 79                  273 	ld	a,c
-   004A F5                  274 	push	af
-   004B 33                  275 	inc	sp
-                            276 ; genCall
-   004C CD 00 00            277 	call	_mode
-   004F E8 01               278 	lda	sp,1(sp)
-                            279 ;	fonts.c 35
-                            280 ; genIpush
-                            281 ; AOP_STK for _main_ibm_font_1_1
-   0051 F8 04               282 	lda	hl,4(sp)
-   0053 2A                  283 	ld	a,(hl+)
-   0054 66                  284 	ld	h,(hl)
-   0055 6F                  285 	ld	l,a
-   0056 E5                  286 	push	hl
-                            287 ; genCall
-   0057 CD 00 00            288 	call	_font_set
-   005A E8 02               289 	lda	sp,2(sp)
-                            290 ;	fonts.c 36
-                            291 ; genIpush
-   005C 21 C1 00            292 	ld	hl,#__str_0 + 0
-   005F E5                  293 	push	hl
-                            294 ; genCall
-   0060 CD 00 00            295 	call	_printf
-   0063 E8 02               296 	lda	sp,2(sp)
-                            297 ;	fonts.c 38
-                            298 ; genIpush
-   0065 21 CE 00            299 	ld	hl,#__str_1 + 0
-   0068 E5                  300 	push	hl
-                            301 ; genCall
-   0069 CD 00 00            302 	call	_printf
-   006C E8 02               303 	lda	sp,2(sp)
-                            304 ;	fonts.c 41
-                            305 ; genIpush
-                            306 ; AOP_STK for _main_italic_font_1_1
-   006E F8 02               307 	lda	hl,2(sp)
-   0070 2A                  308 	ld	a,(hl+)
-   0071 66                  309 	ld	h,(hl)
-   0072 6F                  310 	ld	l,a
-   0073 E5                  311 	push	hl
-                            312 ; genCall
-   0074 CD 00 00            313 	call	_font_set
-   0077 E8 02               314 	lda	sp,2(sp)
-                            315 ;	fonts.c 42
-                            316 ; genAssign
-   0079 01 01 00            317 	ld	bc,#0x0001
-                            318 ; genLabel
-   007C                     319 00101$:
-                            320 ; genCmpEq
-   007C 79                  321 	ld	a,c ; 2
-   007D FE 05               322 	cp	a,#0x05
-   007F C2 87 00            323 	jp	nz,00109$
-   0082 78                  324 	ld	a,b ; 2
-                            325 ; Rule 3
-   0083 B7                  326 	or	a,a
-                            327 ; Rule 5
-   0084 CA 95 00            328 	jp	z,00104$
-   0087                     329 00109$:
-                            330 ;	fonts.c 43
-                            331 ; genIpush
-   0087 C5                  332 	push	bc
-                            333 ; genIpush
-   0088 21 DF 00            334 	ld	hl,#__str_2 + 0
-   008B E5                  335 	push	hl
-                            336 ; genCall
-   008C CD 00 00            337 	call	_printf
-   008F E8 04               338 	lda	sp,4(sp)
-                            339 ;	fonts.c 42
-                            340 ; genPlus
-                            341 ; genPlusIncr
-   0091 03                  342 	inc	bc
-                            343 ; genGoto
-   0092 C3 7C 00            344 	jp	00101$
-                            345 ; genLabel
-   0095                     346 00104$:
-                            347 ;	fonts.c 47
-                            348 ; genIpush
-                            349 ; AOP_STK for _main_min_font_1_1
-   0095 F8 00               350 	lda	hl,0(sp)
-   0097 2A                  351 	ld	a,(hl+)
-   0098 66                  352 	ld	h,(hl)
-   0099 6F                  353 	ld	l,a
-   009A E5                  354 	push	hl
-                            355 ; genCall
-   009B CD 00 00            356 	call	_font_set
-   009E E8 02               357 	lda	sp,2(sp)
-                            358 ;	fonts.c 48
-                            359 ; genIpush
-   00A0 21 F4 00            360 	ld	hl,#__str_3 + 0
-   00A3 E5                  361 	push	hl
-                            362 ; genCall
-   00A4 CD 00 00            363 	call	_printf
-   00A7 E8 02               364 	lda	sp,2(sp)
-                            365 ;	fonts.c 51
-                            366 ; genIpush
-                            367 ; AOP_STK for _main_ibm_font_1_1
-   00A9 F8 04               368 	lda	hl,4(sp)
-   00AB 2A                  369 	ld	a,(hl+)
-   00AC 66                  370 	ld	h,(hl)
-   00AD 6F                  371 	ld	l,a
-   00AE E5                  372 	push	hl
-                            373 ; genCall
-   00AF CD 00 00            374 	call	_font_set
-   00B2 E8 02               375 	lda	sp,2(sp)
-                            376 ;	fonts.c 52
-                            377 ; genIpush
-   00B4 21 0A 01            378 	ld	hl,#__str_4 + 0
-   00B7 E5                  379 	push	hl
-                            380 ; genCall
-   00B8 CD 00 00            381 	call	_printf
-   00BB E8 02               382 	lda	sp,2(sp)
-                            383 ; genLabel
-   00BD                     384 00105$:
-                            385 ; genEndFunction
-   00BD E8 06               386 	lda	sp,6(sp)
-   00BF C1                  387 	pop bc
-   00C0 C9                  388 	ret
-   00C1                     389 ___main_end:
-                            390 	.area _CODE
-   00C1                     391 __str_0:
-   00C1 46 6F 6E 74 20 64   392 	.ascii "Font demo."
-        65 6D 6F 2E
-   00CB 0A                  393 	.db 10
-   00CC 0A                  394 	.db 10
-   00CD 00                  395 	.db 0
-   00CE                     396 __str_1:
-   00CE 49 42 4D 20 46 6F   397 	.ascii "IBM Font #!?123"
-        6E 74 20 23 21 3F
-        31 32 33
-   00DD 0A                  398 	.db 10
-   00DE 00                  399 	.db 0
-   00DF                     400 __str_2:
-   00DF 49 6E 20 69 74 61   401 	.ascii "In italics, line %u"
-        6C 69 63 73 2C 20
-        6C 69 6E 65 20 25
-        75
-   00F2 0A                  402 	.db 10
-   00F3 00                  403 	.db 0
-   00F4                     404 __str_3:
-   00F4 4D 69 6E 69 6D 61   405 	.ascii "Minimal 36 tile font"
-        6C 20 33 36 20 74
-        69 6C 65 20 66 6F
-        6E 74
-   0108 0A                  406 	.db 10
-   0109 00                  407 	.db 0
-   010A                     408 __str_4:
-   010A 0A                  409 	.db 10
-   010B 44 6F 6E 65 21      410 	.ascii "Done!"
-   0110 00                  411 	.db 0
+   001B E8 02               228 	lda	sp,2(sp)
+                            229 ;	fonts.c 25
+                            230 ; genIpush
+   001D 3E 00               231 	ld	a,#0x00
+   001F F5                  232 	push	af
+   0020 33                  233 	inc	sp
+                            234 ; genIpush
+   0021 3E 02               235 	ld	a,#0x02
+   0023 F5                  236 	push	af
+   0024 33                  237 	inc	sp
+                            238 ; genIpush
+   0025 3E 00               239 	ld	a,#0x00
+   0027 F5                  240 	push	af
+   0028 33                  241 	inc	sp
+                            242 ; genCall
+   0029 CD 00 00            243 	call	_color
+   002C E8 03               244 	lda	sp,3(sp)
+                            245 ;	fonts.c 27
+                            246 ; genIpush
+   002E 21 00 00            247 	ld	hl,#_font_min + 0
+   0031 E5                  248 	push	hl
+                            249 ; genCall
+   0032 CD 00 00            250 	call	_font_load
+   0035 E8 02               251 	lda	sp,2(sp)
+                            252 ;	fonts.c 30
+                            253 ; genCall
+   0037 CD 00 00            254 	call	_get_mode
+   003A 4B                  255 	ld	c,e
+                            256 ; genOr
+                            257 ; Type res[2] = l[2]&r[1]
+                            258 ; Size res[1] = l[1]&r[1]
+   003B 79                  259 	ld	a,c
+   003C F6 04               260 	or	a,#0x04
+   003E 4F                  261 	ld	c,a
+                            262 ; genIpush
+   003F 79                  263 	ld	a,c
+   0040 F5                  264 	push	af
+   0041 33                  265 	inc	sp
+                            266 ; genCall
+   0042 CD 00 00            267 	call	_mode
+   0045 E8 01               268 	lda	sp,1(sp)
+                            269 ;	fonts.c 35
+                            270 ; genIpush
+                            271 ; AOP_STK for _main_ibm_font_1_1
+   0047 F8 00               272 	lda	hl,0(sp)
+   0049 2A                  273 	ld	a,(hl+)
+   004A 66                  274 	ld	h,(hl)
+   004B 6F                  275 	ld	l,a
+   004C E5                  276 	push	hl
+                            277 ; genCall
+   004D CD 00 00            278 	call	_font_set
+   0050 E8 02               279 	lda	sp,2(sp)
+                            280 ;	fonts.c 36
+                            281 ; genIpush
+   0052 21 5F 00            282 	ld	hl,#__str_0 + 0
+   0055 E5                  283 	push	hl
+                            284 ; genCall
+   0056 CD 00 00            285 	call	_printf
+   0059 E8 02               286 	lda	sp,2(sp)
+                            287 ; genLabel
+   005B                     288 00101$:
+                            289 ; genEndFunction
+   005B E8 02               290 	lda	sp,2(sp)
+   005D C1                  291 	pop bc
+   005E C9                  292 	ret
+   005F                     293 ___main_end:
+                            294 	.area _CODE
+   005F                     295 __str_0:
+   005F 48 65 6C 6C 6F 20   296 	.ascii "Hello Claire xxx."
+        43 6C 61 69 72 65
+        20 78 78 78 2E
+   0070 0A                  297 	.db 10
+   0071 0A                  298 	.db 10
+   0072 00                  299 	.db 0
 ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
 
 Symbol Table
@@ -477,17 +358,13 @@ Symbol Table
     _VBK_REG                           **** GX
     _WX_REG                            **** GX
     _WY_REG                            **** GX
-  0 ___main_end                        00C1 R
+  0 ___main_end                        005F R
   0 ___main_start                      0000 R
     __cpu                              **** GX
     __io_in                            **** GX
     __io_out                           **** GX
     __io_status                        **** GX
-  0 __str_0                            00C1 R
-  0 __str_1                            00CE R
-  0 __str_2                            00DF R
-  0 __str_3                            00F4 R
-  0 __str_4                            010A R
+  0 __str_0                            005F R
     _add_LCD                           **** GX
     _add_TIM                           **** GX
     _add_VBL                           **** GX
@@ -581,7 +458,7 @@ Symbol Table
 
 Area Table
 
-   0 _CODE                              size  111   flags 0
+   0 _CODE                              size   73   flags 0
    1 _DATA                              size    0   flags 0
    2 _OVERLAY                           size    0   flags 0
    3 _ISEG                              size    0   flags 0

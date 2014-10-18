@@ -449,15 +449,15 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE banks.o
-		NAME lcc71960
+		NAME lcc100840
 	FILE bank_0.o
-		NAME lcc20560
+		NAME lcc94520
 	FILE bank_1.o
-		NAME lcc95280
+		NAME lcc77880
 	FILE bank_2.o
-		NAME lcc105360
+		NAME lcc92760
 	FILE bank_3.o
-		NAME lcc86680
+		NAME lcc13000
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gb/gb.lib
 		MODULE cgb.o
