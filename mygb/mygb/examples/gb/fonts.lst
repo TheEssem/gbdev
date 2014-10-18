@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Sat Oct 18 12:49:22 2014
+                              3 ; Version 2.2.1 Sat Oct 18 13:08:43 2014
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc9960
+                              6 	.module lcc109240
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -296,7 +296,7 @@
    0063 E8 02               296 	lda	sp,2(sp)
                             297 ;	fonts.c 38
                             298 ; genIpush
-   0065 21 D1 00            299 	ld	hl,#__str_1 + 0
+   0065 21 CE 00            299 	ld	hl,#__str_1 + 0
    0068 E5                  300 	push	hl
                             301 ; genCall
    0069 CD 00 00            302 	call	_printf
@@ -331,7 +331,7 @@
                             331 ; genIpush
    0087 C5                  332 	push	bc
                             333 ; genIpush
-   0088 21 E2 00            334 	ld	hl,#__str_2 + 0
+   0088 21 DF 00            334 	ld	hl,#__str_2 + 0
    008B E5                  335 	push	hl
                             336 ; genCall
    008C CD 00 00            337 	call	_printf
@@ -357,7 +357,7 @@
    009E E8 02               357 	lda	sp,2(sp)
                             358 ;	fonts.c 48
                             359 ; genIpush
-   00A0 21 F7 00            360 	ld	hl,#__str_3 + 0
+   00A0 21 F4 00            360 	ld	hl,#__str_3 + 0
    00A3 E5                  361 	push	hl
                             362 ; genCall
    00A4 CD 00 00            363 	call	_printf
@@ -375,7 +375,7 @@
    00B2 E8 02               375 	lda	sp,2(sp)
                             376 ;	fonts.c 52
                             377 ; genIpush
-   00B4 21 0D 01            378 	ld	hl,#__str_4 + 0
+   00B4 21 0A 01            378 	ld	hl,#__str_4 + 0
    00B7 E5                  379 	push	hl
                             380 ; genCall
    00B8 CD 00 00            381 	call	_printf
@@ -389,36 +389,35 @@
    00C1                     389 ___main_end:
                             390 	.area _CODE
    00C1                     391 __str_0:
-   00C1 31 31 32 46 6F 6E   392 	.ascii "112Font demo."
-        74 20 64 65 6D 6F
-        2E
-   00CE 0A                  393 	.db 10
-   00CF 0A                  394 	.db 10
-   00D0 00                  395 	.db 0
-   00D1                     396 __str_1:
-   00D1 49 42 4D 20 46 6F   397 	.ascii "IBM Font #!?123"
+   00C1 46 6F 6E 74 20 64   392 	.ascii "Font demo."
+        65 6D 6F 2E
+   00CB 0A                  393 	.db 10
+   00CC 0A                  394 	.db 10
+   00CD 00                  395 	.db 0
+   00CE                     396 __str_1:
+   00CE 49 42 4D 20 46 6F   397 	.ascii "IBM Font #!?123"
         6E 74 20 23 21 3F
         31 32 33
-   00E0 0A                  398 	.db 10
-   00E1 00                  399 	.db 0
-   00E2                     400 __str_2:
-   00E2 49 6E 20 69 74 61   401 	.ascii "In italics, line %u"
+   00DD 0A                  398 	.db 10
+   00DE 00                  399 	.db 0
+   00DF                     400 __str_2:
+   00DF 49 6E 20 69 74 61   401 	.ascii "In italics, line %u"
         6C 69 63 73 2C 20
         6C 69 6E 65 20 25
         75
-   00F5 0A                  402 	.db 10
-   00F6 00                  403 	.db 0
-   00F7                     404 __str_3:
-   00F7 4D 69 6E 69 6D 61   405 	.ascii "Minimal 36 tile font"
+   00F2 0A                  402 	.db 10
+   00F3 00                  403 	.db 0
+   00F4                     404 __str_3:
+   00F4 4D 69 6E 69 6D 61   405 	.ascii "Minimal 36 tile font"
         6C 20 33 36 20 74
         69 6C 65 20 66 6F
         6E 74
-   010B 0A                  406 	.db 10
-   010C 00                  407 	.db 0
-   010D                     408 __str_4:
-   010D 0A                  409 	.db 10
-   010E 44 6F 6E 65 21      410 	.ascii "Done!"
-   0113 00                  411 	.db 0
+   0108 0A                  406 	.db 10
+   0109 00                  407 	.db 0
+   010A                     408 __str_4:
+   010A 0A                  409 	.db 10
+   010B 44 6F 6E 65 21      410 	.ascii "Done!"
+   0110 00                  411 	.db 0
 ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
 
 Symbol Table
@@ -485,10 +484,10 @@ Symbol Table
     __io_out                           **** GX
     __io_status                        **** GX
   0 __str_0                            00C1 R
-  0 __str_1                            00D1 R
-  0 __str_2                            00E2 R
-  0 __str_3                            00F7 R
-  0 __str_4                            010D R
+  0 __str_1                            00CE R
+  0 __str_2                            00DF R
+  0 __str_3                            00F4 R
+  0 __str_4                            010A R
     _add_LCD                           **** GX
     _add_TIM                           **** GX
     _add_VBL                           **** GX
@@ -582,7 +581,7 @@ Symbol Table
 
 Area Table
 
-   0 _CODE                              size  114   flags 0
+   0 _CODE                              size  111   flags 0
    1 _DATA                              size    0   flags 0
    2 _OVERLAY                           size    0   flags 0
    3 _ISEG                              size    0   flags 0

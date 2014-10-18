@@ -302,7 +302,7 @@ MODULES
 	FILE C:\repo\gb\mygb\mygb\lib/gb/crt0.o
 		NAME Runtime
 	FILE rpn.o
-		NAME lcc93240
+		NAME lcc72680
 LIBRARIES
 	LIBRARY C:\repo\gb\mygb\mygb\lib/gbz80/gbz80.lib
 		MODULE isalpha.o

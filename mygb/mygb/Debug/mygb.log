@@ -1,0 +1,49 @@
+﻿Build started 18/10/2014 12:54:56.
+     1>Project "c:\repo\gb\mygb\mygb\mygb.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt examples\gb\banks.c examples\gb\bank_0.c examples\gb\bank_1.c examples\gb\bank_2.c examples\gb\bank_3.c examples\gb\comm.c examples\gb\filltest.c examples\gb\fonts.c examples\gb\fprpn.c examples\gb\irq.c examples\gb\paint.c examples\gb\ram_fn.c examples\gb\rand.c examples\gb\rpn.c examples\gb\samptest.c examples\gb\sound.c
+         sound.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(657): warning C4013: 'cls' undefined; assuming extern returning int
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(659): warning C4013: 'print' undefined; assuming extern returning int
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(665): warning C4013: 'println' undefined; assuming extern returning int
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(665): error C2065: 'UNSIGNED' : undeclared identifier
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(704): warning C4013: 'printn' undefined; assuming extern returning int
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(704): error C2065: 'UNSIGNED' : undeclared identifier
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(713): error C2065: 'UNSIGNED' : undeclared identifier
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(723): warning C4090: '=' : different 'const' qualifiers
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(752): error C2065: 'UNSIGNED' : undeclared identifier
+     1>c:\repo\gb\mygb\mygb\examples\gb\sound.c(765): error C2065: 'UNSIGNED' : undeclared identifier
+         samptest.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\samptest.c(25): error C2373: 'sample' : redefinition; different type modifiers
+                 c:\repo\gb\mygb\mygb\examples\gb\samptest.c(11) : see declaration of 'sample'
+         rpn.c
+         rand.c
+         ram_fn.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\ram_fn.c(24): warning C4047: 'initializing' : 'void (__cdecl *)(void)' differs in levels of indirection from 'int'
+     1>c:\repo\gb\mygb\mygb\examples\gb\ram_fn.c(25): warning C4047: 'initializing' : 'void (__cdecl *)(void)' differs in levels of indirection from 'int'
+         paint.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\paint.c(270): warning C4090: 'function' : different 'const' qualifiers
+     1>c:\repo\gb\mygb\mygb\examples\gb\paint.c(308): warning C4090: 'function' : different 'const' qualifiers
+     1>c:\repo\gb\mygb\mygb\examples\gb\paint.c(323): warning C4090: 'function' : different 'const' qualifiers
+         irq.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\irq.c(45): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'int_handler'
+     1>c:\repo\gb\mygb\mygb\examples\gb\irq.c(46): warning C4113: 'void (__cdecl *)()' differs in parameter lists from 'int_handler'
+         fprpn.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\fprpn.c(54): warning C4013: 'isdigit' undefined; assuming extern returning int
+     1>c:\repo\gb\mygb\mygb\examples\gb\fprpn.c(57): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\repo\gb\mygb\mygb\examples\gb\fprpn.c(60): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         fonts.c
+         filltest.c
+         comm.c
+     1>c:\repo\gb\mygb\mygb\examples\gb\comm.c(9): warning C4101: 'j' : unreferenced local variable
+         bank_3.c
+         bank_2.c
+         bank_1.c
+         bank_0.c
+         banks.c
+         Generating Code...
+     1>Done Building Project "c:\repo\gb\mygb\mygb\mygb.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.84
