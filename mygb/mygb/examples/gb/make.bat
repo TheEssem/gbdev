@@ -1,3 +1,9 @@
+..\..\bin\lcc -Wa-l -DUSE_SFR_FOR_REG -c -o lemon.o exemple.c
+..\..\bin\lcc -Wa-l -DUSE_SFR_FOR_REG -Wf-bo1 -c -o fullos.o fullos.c
+..\..\bin\lcc -Wl-m -DUSE_SFR_FOR_REG -Wl-yt2 -Wl-yo4 -Wl-yp0x143=0x80 -o lemon.gb lemon.o fullos.o 
+
+
+
 ..\..\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -c -o mypaint.o mypaint.c
 ..\..\bin\lcc -Wa-l -Wl-m -Wl-j -DUSE_SFR_FOR_REG -o mypaint.gb mypaint.o
 

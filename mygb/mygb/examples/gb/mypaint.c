@@ -3,6 +3,8 @@
 #include <gb/drawing.h>
 #include <gb/font.h>
 #include <gb/console.h>
+#include "LP1.297a.c"
+
 
 #define NB_TOOLS 18
 #define NB_DATA_TILES 48
@@ -545,7 +547,10 @@ void fontTest()
 
 	color(BLACK, DKGREY, SOLID);
 
-	printf("Now, this is a\n");
+
+	//printf("I AM ERROR    ");
+
+	/*printf("Now, this is a\n");
 	delayFrames(delayTime);
 	printf("story all about how\n");
 	delayFrames(delayTime);
@@ -565,10 +570,34 @@ void fontTest()
 	delayFrames(delayTime);
 	printf("a town called\n");
 	delayFrames(delayTime);
-	printf("Bel Air\n");
+	printf("Bel Air\n");*/
 
 
 }
+
+void musicTest()
+{
+	clock01=0;
+	step=0;
+	patern=0;
+	stopmusic();
+	patern_definition();
+
+	while (1)
+	{
+		if (clock01>=7){clock01=0;}      // set the speed of your music
+
+		wait_vbl_done();
+
+		if (!clock01) {music();}
+
+		clock01+=1;
+		printf("I AM ERROR    ");
+
+	}
+
+}
+
 
 void main()
 {
@@ -576,6 +605,8 @@ void main()
   OBP1_REG = 0xE0U;
 
   fontTest();
+
+  musicTest();
   /*
   splash();
 

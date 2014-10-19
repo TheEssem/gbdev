@@ -1,0 +1,182 @@
+Lemon tracker player v2.95a
+
+	G.Raimond <<aka Lemon>>
+
+		http://members.fortunecity.com/lemon26/
+
+/******************************************************************************/
+
+30 july 2000
+------------
+
+What's new:
+
+ I removed inside this package the lover song full (you can download it separately on my site)
+ and rewrote a new little song also on my site to show what you can do with the effects
+ in this new player.
+
+ Correct some bug with the volume effect on voice 3, but nobody complained for 1 year,
+ perhaps people don't used it .. :(
+ also correct a nasty bug with instruments that replace the wrong value if no note was played.
+
+ New lemon Player features:
+
+	this new player work with GBDK 2.94 (and older), but I didn't check yet
+	with the new GBDK 2.95. (let me know if there is trouble with it)
+	already setuped :
+		6 instruments in voice 1
+		6 instruments in voice 2
+		8 instruments in voice 3
+		8 instruments in voice 4
+	volume effect	even if no note is played, like this you can fade
+			the volume up or down smouthely, on every voices
+			(beware of voice 3 there is only 4 step volume...)
+	pan effect	you can aswell pan a voice even the note is already played
+
+ New instruments wave on channel 3
+	can add directely waves from the GameBee synthesizer 		
+		( http://www.student.oulu.fi/~aeeben/gamebee.html )
+
+ New mod2gb7.exe 
+	features:
+	32 instruments	(8 instruments by voice)
+	3 effects	(volume, pan , and that's all(I don't have plan for add more effects))
+	default file name,	if you forgot to place a song name in your mod file
+				it will put def	by default inside the C source.
+
+ I did like this because I will not have time to include more effect, I prefer to give more
+time to assembly programming... so the most easy way is to have enough instruments to have
+a good music ^_^
+
+IMPORTANT:
+
+If you want to listen at the pan effect use a headphone on your gameboy it's really nice like this
+, but it work quite well under no$gmb. ^_^ enjoy...
+
+/******************************************************************************/
+
+Ok I will try to explain quickly some of the feature of this stuff:
+
+Zip file must include :
+
+	make.bat
+	lemon_player_doc.txt
+	fullos.mod			module without instruments
+	fullos.c
+	exemple.c
+	sndplayer295.c
+	songs_def.c
+	lemon.gb
+
+
+mod2gb7.exe is the file to convert your music (mod file) wrote with a tracker (fasttracker 0.8 or 0.9) NEVER FORGET TO SAVE YOUR MUSIC TWICE !!!
+
+1 with instruments include (for future improve)
+
+1 WITHOUT instruments (YOU MUST ZAP your instrument before saving) for use with the convertor
+
+!!!!  IF U FORGOT U MAY crash WINDOWS !!!! I know it's a nasty bug but I still didn't have time yet to correct it...
+
+your music must be in mod format with 4 tracks and 64 steps
+the instrument is classidied by 8 in fastracker
+
+01 = 09
+02 = 0A
+03 = 0B
+04 = 0C
+05 = 0D
+06 = 0E
+07 = 0F
+08 = 10
+
+then when you convert the mod file you have 4 instruments for each voices.
+I added already instruments on voices 1 2 3 4;
+
+voice 1:
+
+	01 = inst1 sustain short
+	02 = inst2 sustain short
+	03 = inst3 sustain short
+	04 = inst4 sustain infinite
+	05 = inst5 sustain infinite
+	06 = inst6 sustain infinite
+	07 = free not yet setuped
+	08 = free not yet setuped
+
+voice 2: (same as voice 1)
+
+	01 = inst1 sustain short
+	02 = inst2 sustain short
+	03 = inst3 sustain short
+	04 = inst4 sustain infinite
+	05 = inst5 sustain infinite
+	06 = inst6 sustain infinite
+	07 = free not yet setuped
+	08 = free not yet setuped
+
+voice 3:
+
+	01 = synth 1 sustain infinite
+	02 = synth 2 sustain infinite
+	03 = synth 3 sustain infinite
+	04 = synth 4 sustain infinite
+	05 = flute 1 sustain infinite
+	06 = flute 2 sustain infinite
+	07 = lead 1 sustain infinite
+	08 = flute high sustain infinite
+
+voice 4:
+
+	01 = bass drum
+	02 = hihat
+	03 = snare
+	04 = cymbal
+	05 = laser tom high
+	06 = laser tom mid
+	07 = laser tom low
+	08 = strange reflect
+
+Now there is 2 effects, the volume and the pan.
+
+VOLUME EFFECT:
+
+you can change volume in tracker using the C effect and not the volume column, when you convert the file it will transform the vol in 16 different vol for voice 1 2 and 4
+and only 4 different vol in voice 3. (look at the pan doc if you don't understand)
+
+volume = C..	c00 = no sound
+		.
+		.
+		c40 = vol max
+
+	the value move from c00 to c40 and it's in Hex format
+
+
+PAN EFFECT:
+
+You can change the pan effect when you want in your song the effect is 8 in your tracker, and the value
+can move from 00 , 80 , F0.
+
+pan = 8..	800 = left
+		880 = middle
+		8F0 = right
+
+if you changed the pan on a voice the voice will stay in the last position, means if you play voice 1 on the left 800 and restart the song the voice will stay as it was (on the left) until you replace a pan effect on the middle 880.
+
+
+Now you can download the Fullos song with full instruments, the instruments are already pitched correctely to match with the real GameBoy, so you can just zap my song and keep the instruments as it is to write your own music ^_^ and when you convert it it will be near the same !!!
+
+
+Hint:
+
+It will be more easy for you if you know how to write music with fastracker ;)
+read well inside the source to have some other explanation on what it's doing.
+I now it's not perfect but it can help people who wish to write music in C for GB...
+
+
+
+Enjoy this tool and let me know your feedbacks :)
+
+
+G.Raimond <<aka Lemon>>
+
+http://members.fortunecity.com/lemon26/

@@ -9,6 +9,7 @@
 #include <gb/console.h>
 #include <gb/drawing.h>
 
+
 void main(void)
 {
     font_t ibm_font, italic_font, min_font;

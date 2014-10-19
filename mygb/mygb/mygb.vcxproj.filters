@@ -69,6 +69,18 @@
     <ClCompile Include="examples\gb\sound.c">
       <Filter>Source Files\examples</Filter>
     </ClCompile>
+    <ClCompile Include="examples\gb\exemple.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\gb\fullos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\gb\LP1.297a.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="examples\gb\Songs_def.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="examples\gb\gb\cgb.h">
